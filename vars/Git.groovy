@@ -27,7 +27,6 @@ def call(body)
          throw error
       }
    }
-   /*
    finally {
       def TO = 'mgarg17@sapient.com'
       def FROM = 'mgarg17@sapient.com'
@@ -43,7 +42,6 @@ def call(body)
       def gitMail = new gitEmail()
       gitMail.gitSendmail("$TO","$FROM","$SUBJECT","$BODY")
    }
-   */
 }
 
 

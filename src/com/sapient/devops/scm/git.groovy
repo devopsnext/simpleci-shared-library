@@ -41,16 +41,16 @@ def gitCheckout()
           env.GIT_COMMIT = getGitCommitHash()
           env.GIT_AUTHOR_EMAIL = getCommitAuthorEmail()
        }
-	   // currentBuild.result = 'SUCCESS'
+	   currentBuild.result = 'SUCCESS'
    }
    catch (error) {
        wrap([$class: 'AnsiColorBuildWrapper']) {
           print "\u001B[41m[ERROR] clone for repository ${env.GIT_URL} failed, please check the logs..."
           throw error
        }
-	   // currentBuild.result = 'FAILED'
+	   currentBuild.result = 'FAILED'
    }
-   // step([$class: 'StashNotifier'])
+   step([$class: 'StashNotifier'])
 }
 
 /************************************
@@ -91,3 +91,40 @@ def getCommitAuthorEmail()
      }
    }
 }
+
+/**********************************************
+***** Function to get the Git repository URL
+***********************************************/
+def getGitRepositoryURL()
+{
+   try {
+      gitRepoURL = sh(returnStdout: true, script: "cd ${WORKSPACE}@script;git config --get remote.origin.url").trim()
+      return gitRepoURL
+   }
+   catch (Exception error)
+   {
+      wrap([$class: 'AnsiColorBuildWrapper']) {
+          print "\u001B[41m[ERROR] failed to get the Git repository URL..."
+	  throw error
+      }
+   }
+}
+
+/***********************************************
+***** Function to get the default Git branch
+************************************************/
+def getGitDefaultBranch()
+{
+   try {
+      gitDefaultBranch = sh(returnStdout: true, script: "cd ${WORKSPACE}@script; git show -s --pretty=%d HEAD | awk '{print \$2}' | cut -f1 -d ')'").trim()
+      return gitDefaultBranch
+   }
+   catch (Exception error)
+   {
+      wrap([$class: 'AnsiColorBuildWrapper']) {
+          print "\u001B[41m[ERROR] failed to get the Git current pointing branch....."
+          throw error
+      }
+   }
+}
+
