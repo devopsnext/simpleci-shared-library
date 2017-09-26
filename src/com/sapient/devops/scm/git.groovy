@@ -79,7 +79,7 @@ def getCommitAuthorEmail()
 {
    try {
      def COMMIT = getGitCommitHash()
-     sh "git log --format='%ae' $COMMIT > author"
+     sh "git log --format='%ae' $COMMIT | sort -u > author"
      def author = readFile('author').trim()
      return author
    }
