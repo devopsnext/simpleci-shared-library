@@ -15,10 +15,11 @@ def call(body) {
   body()
 
   try {
-      def appexDeploy = new appex()
+      def appex = new appex()
     	echo "-----------appexDeploy------------"
-    	echo "appex deploy : "+appexDeploy
+    	echo "appex deploy : "+appex
         echo "-----------appexDeploy------------"
+    	appex.deploy()
     	
   }
   catch (Exception error)
