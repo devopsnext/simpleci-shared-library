@@ -8,7 +8,7 @@
 
 package com.sapient.devops.deploy
 
-def deployRemote() {
+def deploy() {
 	try {
 		takeBackup()
 		copyBuildFiles()
