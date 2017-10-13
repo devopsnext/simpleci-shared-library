@@ -8,25 +8,7 @@
 
 package com.sapient.devops.deploy
 
-/*def REMOTE_USER
-def REMOTE_IP
-String DEPLOY_PATH,SCRIPT*/
-
-/*************************************
- ** Function to set the variables.
- **************************************/
-/*void setValue(String remote_usr,String remote_hos,String dist,String command)
- {
- this.REMOTE_USER = remote_usr
- this.REMOTE_IP = remote_hos
- this.DEPLOY_PATH = dist
- this.SCRIPT = command
- }
- */
-/*******************************************************
- ** Function to copy the artifact to remote server
- *******************************************************/
-def deploy() {
+def deployRemote() {
 	try {
 		takeBackup()
 		copyBuildFiles()
