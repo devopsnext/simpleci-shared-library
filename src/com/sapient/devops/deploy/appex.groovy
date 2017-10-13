@@ -80,8 +80,10 @@ def takeBackup() {
  *******************************************************/
 def copyBuildFiles() {
 	try {
-		println "copying build files...!"
-		sh(returnStdout: true, script: "scp -r _book/* root@del2vmplinvcto01.sapient.com:/app/deployables/simpleci/")
+		println "copying build files to dev server...!"
+		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no tar -czvf  root@10.202.11.199:/app/backup/simpleci/appex_gitbook.tar.gz _book/*")
+		println "copying build files to dev server completed successfully...!"
+		//sh(returnStdout: true, script: "scp -r _book/* root@del2vmplinvcto01.sapient.com:/app/deployables/simpleci/")
 		//sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} unzip -o ${DEPLOY_PATH}/${env.BUILD_ARTIFACT}")
 	}
 	catch (Exception error) {
