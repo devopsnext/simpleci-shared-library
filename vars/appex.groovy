@@ -17,7 +17,7 @@ def call(body) {
   try {
       def appexDeploy = new appex()
     	echo "-----------appexDeploy------------"
-    	echo appexDeploy
+    	echo "appex deploy : "+appexDeploy
         echo "-----------appexDeploy------------"
     	appexDeploy.deployRemote()
   }
