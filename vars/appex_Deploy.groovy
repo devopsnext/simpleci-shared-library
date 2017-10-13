@@ -15,13 +15,13 @@ def call(body) {
   body()
 
   try {
-      def appex = new aem()
+      def remoteappex = new aem()
     	echo "-----------appexDeploy------------"
     	echo "appex deploy : "+appex
         echo "-----------appexDeploy------------"
-    	appex.takeBackup()
-    	appex.copyBuildFiles()
-    	appex.deployLatest()	
+    	remoteappex.takeBackup()
+    	remoteappex.copyBuildFiles()
+    	remoteappex.deployLatest()	
     	
   }
   catch (Exception error)
