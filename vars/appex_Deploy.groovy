@@ -6,7 +6,7 @@
 ***** Revision    :: 2.0                                                    *****
 ********************************************************************************/
 
-import com.sapient.devops.deploy.aem
+import com.sapient.devops.deploy.appex
 
 def call(body) {
   def config = [:]
@@ -15,14 +15,10 @@ def call(body) {
   body()
 
   try {
-      def remoteappex = new aem()
-    	echo "-----------appexDeploy------------"
+      def remoteappex = new appex()
     	
         echo "-----------appexDeploy------------"
-    	remoteappex.takeBackup()
-    	remoteappex.copyBuildFiles()
-    	remoteappex.deployLatest()	
-    	
+    	remoteappex.deploy()
   }
   catch (Exception error)
   {
