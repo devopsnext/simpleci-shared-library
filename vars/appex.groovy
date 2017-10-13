@@ -16,6 +16,9 @@ def call(body) {
 
   try {
       def appexDeploy = new appex()
+    	echo "-----------appexDeploy------------"
+    	echo appexDeploy
+        echo "-----------appexDeploy------------"
       appexDeploy.deploy()
   }
   catch (Exception error)
