@@ -15,8 +15,11 @@ def call(body) {
   body()
 
   try {
-      def remoteDeploy = new appex()
-      remoteDeploy.deploy()
+      def appexDeploy = new appex()
+    	echo "-----------appexDeploy------------"
+    	echo "appex deploy : "+appexDeploy
+        echo "-----------appexDeploy------------"
+    	
   }
   catch (Exception error)
   {
