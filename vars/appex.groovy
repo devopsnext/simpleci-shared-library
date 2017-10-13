@@ -19,7 +19,6 @@ def call(body) {
     	echo "-----------appexDeploy------------"
     	echo appexDeploy
         echo "-----------appexDeploy------------"
-      appexDeploy.deploy()
   }
   catch (Exception error)
   {
