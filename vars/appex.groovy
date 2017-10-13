@@ -19,7 +19,7 @@ def call(body) {
     	echo "-----------appexDeploy------------"
     	echo "appex deploy : "+appexDeploy
         echo "-----------appexDeploy------------"
-    	appexDeploy.deployRemote()
+    	
   }
   catch (Exception error)
   {
