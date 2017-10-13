@@ -17,7 +17,7 @@ def call(body) {
   try {
       def remoteappex = new aem()
     	echo "-----------appexDeploy------------"
-    	echo "appex deploy : "+appex
+    	
         echo "-----------appexDeploy------------"
     	remoteappex.takeBackup()
     	remoteappex.copyBuildFiles()
