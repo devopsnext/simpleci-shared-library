@@ -51,7 +51,7 @@ def deployLatest() {
 	}
 	catch (Exception error) {
 		wrap([$class: 'AnsiColorBuildWrapper']) {
-			println "\u001B[41m[ERROR] file " + FILE + "  is not available on remote server " 
+			println "is not available on remote server " 
 			throw error
 		}
 	}
@@ -81,9 +81,10 @@ def copyBuildFiles() {
 	try {
 		println "tar _book...!"
 		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_gitbook.tar.gz _book/*")
+		
+		sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  root@del2vmplinvcto01.sapient.com:/app/deployables/simpleci/")
 		println "copying build files to dev server completed successfully...!"
-		//sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  root@del2vmplinvcto01.sapient.com:/app/deployables/simpleci/")
-		//sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} unzip -o ${DEPLOY_PATH}/${env.BUILD_ARTIFACT}")
+      //sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} unzip -o ${DEPLOY_PATH}/${env.BUILD_ARTIFACT}")
 	}
 	catch (Exception error) {
 		wrap([$class: 'AnsiColorBuildWrapper']) {
