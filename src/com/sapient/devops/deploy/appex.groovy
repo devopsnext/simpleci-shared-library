@@ -51,7 +51,7 @@ def deployLatest() {
 	}
 	catch (Exception error) {
 		wrap([$class: 'AnsiColorBuildWrapper']) {
-			println "is not available on remote server " 
+			println "is not available on remote server " +error
 			throw error
 		}
 	}
