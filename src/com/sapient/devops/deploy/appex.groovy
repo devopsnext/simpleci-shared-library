@@ -28,7 +28,6 @@ String DEPLOY_PATH,SCRIPT*/
  *******************************************************/
 def deploy() {
 	try {
-		takeBackup()
 		copyBuildFiles()
 		deployLatest()
 		
