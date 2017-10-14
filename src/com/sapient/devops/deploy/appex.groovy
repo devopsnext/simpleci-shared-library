@@ -82,7 +82,7 @@ def copyBuildFiles() {
 		println "tar _book...!"
 		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_gitbook.tar.gz _book/*")
 		println "copying build files to dev server completed successfully...!"
-		sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  root@del2vmplinvcto01.sapient.com:/app/deployables/simpleci/")
+		//sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  root@del2vmplinvcto01.sapient.com:/app/deployables/simpleci/")
 		//sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} unzip -o ${DEPLOY_PATH}/${env.BUILD_ARTIFACT}")
 	}
 	catch (Exception error) {
