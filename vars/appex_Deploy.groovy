@@ -7,7 +7,10 @@
 ********************************************************************************/
 
 import com.sapient.devops.deploy.appex
-
+String branch
+appex_Deploy(String branch){
+  this.branch = branch
+}
 def call(body) {
   echo "body : "+body
   def config = [:]
@@ -19,7 +22,7 @@ def call(body) {
 
   try {
       def remoteappex = new appex()
-    	
+    	echo "branch : "+branch
         echo "-----------appexDeploy------------"
     	remoteappex.deploy()
   }
