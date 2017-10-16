@@ -11,6 +11,8 @@ import com.sapient.devops.deploy.appex
 def call(body) {
   echo "body : "+body
   def config = [:]
+  echo "config obj : "+config
+
   body.resolveStrategy = Closure.DELEGATE_FIRST
   body.delegate = config
   body()
