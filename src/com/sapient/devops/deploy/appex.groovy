@@ -47,7 +47,7 @@ def deployLatest() {
 	try {
 		println "deploy Latest...!"
 		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no root@10.202.11.199 sh /app/deployables/setup.sh")
-		//sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no root@10.202.11.199 cp -r /app/deployables/simpleci/* /app/appx_html/help/")
+		
 	}
 	catch (Exception error) {
 		wrap([$class: 'AnsiColorBuildWrapper']) {
