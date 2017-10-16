@@ -15,6 +15,7 @@ def call(body) {
   body()
 
   try {
+      echo "config obj : "+config
       def aemDeploy = new aem()
       aemDeploy.setValue("${config.AUTHOR_IP}", "${config.PUBLISH_IP}", "${config.ARTIFACT_NAME}", "${config.ARTIFACT_VERSION}", "${config.USERNAME}", "${config.PASSWORD}")
 	  aemDeploy.validate()
