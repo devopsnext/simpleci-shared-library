@@ -11,28 +11,25 @@ package com.sapient.devops.deploy
 /*def REMOTE_USER
 def REMOTE_IP
 String DEPLOY_PATH,SCRIPT*/
-def DEV_HOST = "root@10.202.11.199"
-String PROD_HOST_ONE = "root@10.150.6.134"
-String PROD_HOST_TWO = "root@10.150.6.135"
+
 String HOST_NAME
 /*************************************
  ** Function to set the variables.
  **************************************/
-/*void setValue(String remote_usr,String remote_hos,String dist,String command)
+void setValue()
  {
- this.REMOTE_USER = remote_usr
- this.REMOTE_IP = remote_hos
- this.DEPLOY_PATH = dist
- this.SCRIPT = command
+	String DEV_HOST = "root@10.202.11.199"
+	String PROD_HOST_ONE = "root@10.150.6.134"
+	String PROD_HOST_TWO = "root@10.150.6.135"
  }
- */
+ 
 /*******************************************************
  ** Function to copy the artifact to remote server
  *******************************************************/
 def deploy() {
 	try {
-      
-      	echo "DEV_HOST  : "+HOST_NAME
+        setValue()
+      	echo "DEV_HOST  : "+DEV_HOST
       	setupHost()
 		copyBuildFiles()
 		deployLatest()
