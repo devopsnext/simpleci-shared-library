@@ -49,7 +49,7 @@ def deploy() {
 def deployLatest() {
 	try {
 		println "deploy Latest...!"
-		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $HOST_NAME sh /app/deployables/setup.sh")
+		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $DEV_HOST sh /app/deployables/setup.sh")
 		
 	}
 	catch (Exception error) {
