@@ -14,14 +14,17 @@ String DEPLOY_PATH,SCRIPT*/
 
 String HOST_NAME
 String DEV_HOST 
+String PROD_HOST_ONE
+String PROD_HOST_TWO
 /*************************************
  ** Function to set the variables.
  **************************************/
 void setValue()
  {
 	this.DEV_HOST = "root@10.202.11.199"
-	
- }
+    this.PROD_HOST_ONE = "root@10.150.6.134"
+    this.PROD_HOST_TWO = "root@10.150.6.135"
+}
  
 /*******************************************************
  ** Function to copy the artifact to remote server
@@ -29,7 +32,6 @@ void setValue()
 def deploy() {
 	try {
         setValue()
-      	echo "DEV_HOST  : "+DEV_HOST
       	setupHost()
 		copyBuildFiles()
 		deployLatest()
@@ -49,7 +51,7 @@ def deploy() {
 def deployLatest() {
 	try {
 		println "deploy Latest...!"
-		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $DEV_HOST sh /app/deployables/setup.sh")
+		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $HOST_NAME sh /app/deployables/setup.sh")
 		
 	}
 	catch (Exception error) {
@@ -87,9 +89,8 @@ def copyBuildFiles() {
   
 		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_gitbook.tar.gz _book/*")
 		
-		sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $DEV_HOST:/app/deployables/simpleci/")
+		sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $HOST_NAME:/app/deployables/simpleci/")
 		println "copying build files to dev server completed successfully...!"
-      //sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} unzip -o ${DEPLOY_PATH}/${env.BUILD_ARTIFACT}")
 	}
 	catch (Exception error) {
 		wrap([$class: 'AnsiColorBuildWrapper']) {
@@ -100,6 +101,7 @@ def copyBuildFiles() {
 }
 def setupHost(){
   if("${env.BRANCH_NAME}" != "master"){
-  	  echo "brnach name in setup host : "+"${env.BRANCH_NAME}"
+      echo "branch name : "+"${env.BRANCH_NAME}"
+  	  HOST_NAME = DEV_HOST
   }
 }
