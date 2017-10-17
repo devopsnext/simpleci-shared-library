@@ -101,6 +101,6 @@ def copyBuildFiles() {
 }
 def setupHost(){
   if("${env.BRANCH_NAME}" != "master"){
-  	 HOST_NAME = DEV_HOST
+  	 HOST_NAME = this.DEV_HOST
   }
 }
