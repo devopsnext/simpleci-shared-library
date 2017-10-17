@@ -11,7 +11,7 @@ package com.sapient.devops.deploy
 /*def REMOTE_USER
 def REMOTE_IP
 String DEPLOY_PATH,SCRIPT*/
-public static String DEV_HOST = "root@10.202.11.199"
+def DEV_HOST = "root@10.202.11.199"
 String PROD_HOST_ONE = "root@10.150.6.134"
 String PROD_HOST_TWO = "root@10.150.6.135"
 String HOST_NAME
@@ -31,7 +31,8 @@ String HOST_NAME
  *******************************************************/
 def deploy() {
 	try {
-      	echo "DEV_HOST  : "+appex.DEV_HOST
+      
+      	echo "DEV_HOST  : "+DEV_HOST
       	setupHost()
 		copyBuildFiles()
 		deployLatest()
