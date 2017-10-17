@@ -14,16 +14,17 @@ String DEPLOY_PATH,SCRIPT*/
 
 String HOST_NAME
 String DEV_HOST 
-String PROD_HOST_ONE
-String PROD_HOST_TWO
+String PROD_HOST
+
 /*************************************
  ** Function to set the variables.
  **************************************/
 void setValue()
  {
-	this.DEV_HOST = "root@10.202.11.199"
-    this.PROD_HOST_ONE = "root@10.150.6.134"
-    this.PROD_HOST_TWO = "root@10.150.6.135"
+	this.DEV_HOST      = "root@10.202.11.199"
+    
+    this.PROD_HOST = "root@10.150.6.134"
+    
 }
  
 /*******************************************************
@@ -100,10 +101,12 @@ def copyBuildFiles() {
 	}
 }
 def setupHost(){
-  if("${env.BRANCH_NAME}" != "master"){
-      echo "branch name : "+"${env.BRANCH_NAME}"
-      echo "DEV_HOST name : "+DEV_HOST
+  	
+  if("${env.BRANCH_NAME}" != "null" && "${env.BRANCH_NAME}" != "master"){
   	  HOST_NAME = DEV_HOST
       echo "HOST_NAME name : "+HOST_NAME
+  }else if(HOST_NAME == "null"  && "${env.BRANCH_NAME}" == "master"){
+      HOST_NAME = PROD_HOST
   }
+  
 }
