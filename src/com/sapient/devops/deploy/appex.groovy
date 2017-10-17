@@ -31,6 +31,7 @@ String HOST_NAME
  *******************************************************/
 def deploy() {
 	try {
+      	echo "DEV_HOST  : "+DEV_HOST
       	setupHost()
 		copyBuildFiles()
 		deployLatest()
@@ -101,6 +102,6 @@ def copyBuildFiles() {
 }
 def setupHost(){
   if("${env.BRANCH_NAME}" != "master"){
-  	 HOST_NAME = this.DEV_HOST
+  	  echo "brnach name in setup host : "+"${env.BRANCH_NAME}"
   }
 }
