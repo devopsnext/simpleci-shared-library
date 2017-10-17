@@ -102,6 +102,8 @@ def copyBuildFiles() {
 def setupHost(){
   if("${env.BRANCH_NAME}" != "master"){
       echo "branch name : "+"${env.BRANCH_NAME}"
+      echo "DEV_HOST name : "+DEV_HOST
   	  HOST_NAME = DEV_HOST
+      echo "HOST_NAME name : "+HOST_NAME
   }
 }
