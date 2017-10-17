@@ -11,7 +11,10 @@ package com.sapient.devops.deploy
 /*def REMOTE_USER
 def REMOTE_IP
 String DEPLOY_PATH,SCRIPT*/
-
+String DEV_HOST = "root@10.202.11.199"
+String PROD_HOST_ONE = "root@10.150.6.134"
+String PROD_HOST_TWO = "root@10.150.6.135"
+String HOST_NAME
 /*************************************
  ** Function to set the variables.
  **************************************/
@@ -28,6 +31,7 @@ String DEPLOY_PATH,SCRIPT*/
  *******************************************************/
 def deploy() {
 	try {
+      	setupHost()
 		copyBuildFiles()
 		deployLatest()
 		
@@ -46,7 +50,7 @@ def deploy() {
 def deployLatest() {
 	try {
 		println "deploy Latest...!"
-		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no root@10.202.11.199 sh /app/deployables/setup.sh")
+		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $HOST_NAME sh /app/deployables/setup.sh")
 		
 	}
 	catch (Exception error) {
@@ -63,7 +67,8 @@ def deployLatest() {
 def takeBackup() {
 	try {
 		println "take backup...!"
-		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no root@10.202.11.199 tar -czvf /app/backup/simpleci/appex_react.tar.gz /app/appx_html/help/")
+       
+		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $HOST_NAME tar -czvf /app/backup/simpleci/appex_react.tar.gz /app/appx_html/help/")
 		
 	}
 	catch (Exception error) {
@@ -80,9 +85,10 @@ def takeBackup() {
 def copyBuildFiles() {
 	try {
 		println "tar _book...!"
+       	echo $HOST_NAME
 		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_gitbook.tar.gz _book/*")
 		
-		sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  root@del2vmplinvcto01.sapient.com:/app/deployables/simpleci/")
+		sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $HOST_NAME:/app/deployables/simpleci/")
 		println "copying build files to dev server completed successfully...!"
       //sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} unzip -o ${DEPLOY_PATH}/${env.BUILD_ARTIFACT}")
 	}
@@ -92,4 +98,9 @@ def copyBuildFiles() {
 			throw error
 		}
 	}
+}
+def setupHost(){
+  if("${env.BRANCH_NAME}" != "master"){
+  	 HOST_NAME = DEV_HOST
+  }
 }
