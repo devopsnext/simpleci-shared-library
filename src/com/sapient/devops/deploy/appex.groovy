@@ -32,7 +32,7 @@ String HOST_NAME
 def deploy() {
 	try {
       
-      	echo "DEV_HOST  : "+DEV_HOST
+      	echo "DEV_HOST  : "+$DEV_HOST
       	setupHost()
 		copyBuildFiles()
 		deployLatest()
