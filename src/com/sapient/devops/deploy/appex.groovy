@@ -13,14 +13,14 @@ def REMOTE_IP
 String DEPLOY_PATH,SCRIPT*/
 
 String HOST_NAME
+String DEV_HOST 
 /*************************************
  ** Function to set the variables.
  **************************************/
 void setValue()
  {
-	String DEV_HOST = "root@10.202.11.199"
-	String PROD_HOST_ONE = "root@10.150.6.134"
-	String PROD_HOST_TWO = "root@10.150.6.135"
+	this.DEV_HOST = "root@10.202.11.199"
+	
  }
  
 /*******************************************************
