@@ -27,7 +27,7 @@ def npmBuild()
       wrap([$class: 'AnsiColorBuildWrapper']) {
 	     println "\u001B[32m[INFO] Building NPM modules, please wait..."
 		 if ( "${NPM_RUN}" == "null" ) {
-           echo "reached npm build if"
+           echo "reached npm build if condition"
 		   sh "npm install"
 		   sh "npm run docs:build"
 		 }
