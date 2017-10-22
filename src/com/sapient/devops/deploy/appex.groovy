@@ -15,6 +15,7 @@ String DEPLOY_PATH,SCRIPT*/
 String HOST_NAME
 String DEV_HOST 
 String PROD_HOST
+String BRANCH_NAME
 
 /*************************************
  ** Function to set the variables.
@@ -24,7 +25,7 @@ void setValue()
 	this.DEV_HOST      = "root@10.202.11.199"
     
     this.PROD_HOST = "root@10.150.6.134"
-    
+    this.BRANCH_NAME = "${env.BRANCH_NAME}"
 }
  
 /*******************************************************
@@ -91,6 +92,7 @@ def copyBuildFiles() {
 		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_gitbook.tar.gz _book/*")
 		
 		sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $HOST_NAME:/app/deployables/simpleci/")
+        sh((returnStdout: true, script: "scp -r /app/ciaas/JENKINS/workspace/$BRANCH_NAME/etup.sh  root@10.202.11.199:/app/deployables/")
 		println "copying build files to dev server completed successfully...!"
 	}
 	catch (Exception error) {
