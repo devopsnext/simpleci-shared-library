@@ -90,7 +90,8 @@ def copyBuildFiles() {
 		println "tar _book...!"
   		echo "JOB NAME : "+"${env.JOB_NAME}"
         echo "WORKSPACE : "+"${env.WORKSPACE}"
-        echo "JOB BASE NAME : "+"${env.JOB_BASE_NAME}"
+        echo "GIT_BRANCH  : "+"${env.GIT_BRANCH }"
+       echo "test : "+GIT_BRANCH
 		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_gitbook.tar.gz _book/*")
 		
 		sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $HOST_NAME:/app/deployables/simpleci/")
