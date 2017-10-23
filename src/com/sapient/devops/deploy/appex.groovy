@@ -9,35 +9,31 @@
 package com.sapient.devops.deploy
 
 /*def REMOTE_USER
-def REMOTE_IP
-String DEPLOY_PATH,SCRIPT*/
+ def REMOTE_IP
+ String DEPLOY_PATH,SCRIPT*/
 
 String HOST_NAME
-String DEV_HOST 
-String PROD_HOST
-String JOB
+String DEV_HOST
+String PROD_HOST_ONE
+String PROD_HOST_TWO
 
 /*************************************
  ** Function to set the variables.
  **************************************/
-void setValue()
- {
+void setValue() {
 	this.DEV_HOST      = "root@10.202.11.199"
-    
-    this.PROD_HOST = "root@10.150.6.134"
-    this.JOB = "${env.JOB_NAME}"
+	this.PROD_HOST_ONE = "root@10.150.6.134"
+	this.PROD_HOST_TWO = "root@10.150.6.135"
 }
- 
+
 /*******************************************************
  ** Function to copy the artifact to remote server
  *******************************************************/
 def deploy() {
 	try {
-        setValue()
-      	setupHost()
+		setValue()
 		copyBuildFiles()
 		deployLatest()
-		
 	}
 	catch (Exception error) {
 		wrap([$class: 'AnsiColorBuildWrapper']) {
@@ -53,8 +49,12 @@ def deploy() {
 def deployLatest() {
 	try {
 		println "deploy Latest...!"
-		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $HOST_NAME sh /app/deployables/setup.sh")
-		
+		if("${env.BRANCH_NAME}" != "null" && "${env.BRANCH_NAME}" != "master"){
+			sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $DEV_HOST sh /app/deployables/setup.sh")
+		}else if("${env.BRANCH_NAME}" != "null"  && "${env.BRANCH_NAME}" == "master"){
+			sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $PROD_HOST_ONE sh /app/deployables/setup.sh")
+			sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $PROD_HOST_TWO sh /app/deployables/setup.sh")
+		}
 	}
 	catch (Exception error) {
 		wrap([$class: 'AnsiColorBuildWrapper']) {
@@ -70,13 +70,12 @@ def deployLatest() {
 def takeBackup() {
 	try {
 		println "take backup...!"
-       
+
 		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $HOST_NAME tar -czvf /app/backup/simpleci/appex_react.tar.gz /app/appx_html/help/")
-		
 	}
 	catch (Exception error) {
 		wrap([$class: 'AnsiColorBuildWrapper']) {
-			println "\u001B[41m[ERROR] failed to run the script on remote server " 
+			println "\u001B[41m[ERROR] failed to run the script on remote server "
 			throw error
 		}
 	}
@@ -88,16 +87,26 @@ def takeBackup() {
 def copyBuildFiles() {
 	try {
 		println "tar _book...!"
-  		echo "JOB NAME : "+"${env.JOB_NAME}"
-        echo "WORKSPACE : "+"${env.WORKSPACE}"
-        echo "GIT_BRANCH  : "+"${env.GIT_BRANCH }"
-       echo "test : "+GIT_BRANCH
+		echo "JOB NAME : "+"${env.JOB_NAME}"
+		echo "WORKSPACE : "+"${env.WORKSPACE}"
+		echo "GIT_BRANCH  : "+"${env.GIT_BRANCH }"
+		echo "test : "+GIT_BRANCH
 		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_gitbook.tar.gz _book/*")
-		
-		sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $HOST_NAME:/app/deployables/simpleci/")
-        sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh $HOST_NAME:/app/deployables/")
-		println "copying build files to dev server completed successfully...!"
+		if("${env.BRANCH_NAME}" != "null" && "${env.BRANCH_NAME}" != "master"){
+			sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $DEV_HOST:/app/deployables/simpleci/")
+			sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh $DEV_HOST:/app/deployables/")
+			sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh $DEV_HOST:/app/deployables/")
+		}else if("${env.BRANCH_NAME}" != "null"  && "${env.BRANCH_NAME}" == "master"){
+			sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $PROD_HOST_ONE:/app/deployables/simpleci/")
+			sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh $PROD_HOST_ONE:/app/deployables/")
+			sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh $PROD_HOST_ONE:/app/deployables/")
+
+			sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $PROD_HOST_TWO:/app/deployables/simpleci/")
+			sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh $PROD_HOST_TWO:/app/deployables/")
+			sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh $PROD_HOST_TWO:/app/deployables/")
+		}
 	}
+
 	catch (Exception error) {
 		wrap([$class: 'AnsiColorBuildWrapper']) {
 			println "\u001B[41m[ERROR] failed to Copy artifact on remote server..."
@@ -105,13 +114,4 @@ def copyBuildFiles() {
 		}
 	}
 }
-def setupHost(){
-  	
-  if("${env.BRANCH_NAME}" != "null" && "${env.BRANCH_NAME}" != "master"){
-  	  HOST_NAME = DEV_HOST
-      echo "HOST_NAME name : "+HOST_NAME
-  }else if(HOST_NAME == "null"  && "${env.BRANCH_NAME}" == "master"){
-      HOST_NAME = PROD_HOST
-  }
-  
-}
+
