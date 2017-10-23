@@ -86,11 +86,6 @@ def takeBackup() {
  *******************************************************/
 def copyBuildFiles() {
 	try {
-		println "tar _book...!"
-		echo "JOB NAME : "+"${env.JOB_NAME}"
-		echo "WORKSPACE : "+"${env.WORKSPACE}"
-		echo "GIT_BRANCH  : "+"${env.GIT_BRANCH }"
-		echo "test : "+GIT_BRANCH
 		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_gitbook.tar.gz _book/*")
 		if("${env.BRANCH_NAME}" != "null" && "${env.BRANCH_NAME}" != "master"){
 			sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $DEV_HOST:/app/deployables/simpleci/")
