@@ -95,7 +95,7 @@ def copyBuildFiles() {
 		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_gitbook.tar.gz _book/*")
 		
 		sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $HOST_NAME:/app/deployables/simpleci/")
-        sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh  root@10.202.11.199:/app/deployables/")
+        sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh $HOST_NAME:/app/deployables/")
 		println "copying build files to dev server completed successfully...!"
 	}
 	catch (Exception error) {
