@@ -29,7 +29,7 @@ def gitSendmail(String to, String from, String subject, String body)
 
     Git checkout stage is completed successfully. Please find the Git repository details:
 
-    GIT Repository URL  => ${env.GIT_URL}
+    GIT Repository URL  => '${env.GIT_URL}'
     GIT Present Branch  => ${env.GIT_BRANCH}
     GIT Commit Hash     => ${env.GIT_COMMIT}
     Git Committer Email => ${env.GIT_AUTHOR_EMAIL}</font>
