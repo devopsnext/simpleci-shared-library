@@ -16,6 +16,7 @@ String UPSTREAM_JOBS
 **************************************/
 void setValue(String upstreamJobs)
 {
+  echo "upstreamJobs : "+upstreamJobs
    this.UPSTREAM_JOBS    =  upstreamJobs
 }
 
