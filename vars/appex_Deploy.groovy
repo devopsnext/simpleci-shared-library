@@ -20,8 +20,8 @@ def call(body) {
   try {
       def remoteappex = new appex()
     	
-        echo "-----------appexDeploy------------"
-    	remoteappex.deploy()
+        echo " WORKSPACE : "+$WORKSPACE
+    	//remoteappex.deploy()
   }
   catch (Exception error)
   {
