@@ -128,7 +128,7 @@ def takePluginsBackup() {
 	try {
 		println "take backup...!"
 		
-		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $DEV_HOST tar -czvf /app/backup/appex/appex_plugins.tar.gz /app/artifactory/etc/plugins")
+		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $DEV_HOST tar -czvf /app/backup/appex/appex_plugins.tar.gz /app/artifactory/etc/plugins/*")
 	}
 	catch (Exception error) {
 		wrap([$class: 'AnsiColorBuildWrapper']) {
