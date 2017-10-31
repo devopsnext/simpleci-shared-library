@@ -6,7 +6,7 @@
 ***** Revision    :: 2.0                                                    *****
 ********************************************************************************/
 
-import com.sapient.devops.deploy.appex
+import com.sapient.devops.deploy.plugins
 
 def call(body) {
   echo "body : "+body
@@ -18,10 +18,9 @@ def call(body) {
   body()
 
   try {
-      def remoteappex = new appex()
-       remoteappex.setValue()
-	   remoteappex.copyPlugins()
-	   remoteappex.takePluginsBackup()
+      def remoteappex = new plugins()
+       remoteappex.deploy()
+	 
   }
   catch (Exception error)
   {
