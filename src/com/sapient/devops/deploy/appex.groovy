@@ -110,30 +110,4 @@ def copyBuildFiles() {
 	}
 }
 
-def copyPlugins(){
-	try{
-		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_plugins.tar.gz -C $WORKSPACE/ .")
-		if("${env.BRANCH_NAME}" != "null" && "${env.BRANCH_NAME}" != "master"){
-			sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_plugins.tar.gz  $DEV_HOST:/app/deployables/appex/")
-			
-		}
-	}catch (Exception error) {
-		wrap([$class: 'AnsiColorBuildWrapper']) {
-			println "\u001B[41m[ERROR] failed to Copy artifact on remote server..."
-			throw error
-		}
-	}
-}
-def takePluginsBackup() {
-	try {
-		println "take backup...!"
-		
-		sh(returnStdout: true, script: "ssh  -o StrictHostKeyChecking=no $DEV_HOST tar -czvf /app/backup/appex/appex_plugins.tar.gz /app/artifactory/etc/plugins/*")
-	}
-	catch (Exception error) {
-		wrap([$class: 'AnsiColorBuildWrapper']) {
-			println "\u001B[41m[ERROR] failed to run the script on remote server "
-			throw error
-		}
-	}
-}
+
