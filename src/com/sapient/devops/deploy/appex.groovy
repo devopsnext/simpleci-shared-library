@@ -112,7 +112,7 @@ def copyBuildFiles() {
 
 def copyPlugins(){
 	try{
-		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_plugins.tar.gz -C $WORKSPACE/*")
+		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_plugins.tar.gz  $WORKSPACE/*")
 		if("${env.BRANCH_NAME}" != "null" && "${env.BRANCH_NAME}" != "master"){
 			sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_plugins.tar.gz  $DEV_HOST:/app/deployables/appex/")
 			
