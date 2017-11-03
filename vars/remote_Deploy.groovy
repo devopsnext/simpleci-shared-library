@@ -17,6 +17,7 @@ def call(body) {
   try {
       def remoteDeploy = new remote()
       echo "config remote IP : "+"${config.REMOTE_IP}"
+      echo "config REMOTE USER : "+"${config.REMOTE_USER}"
       remoteDeploy.setValue("${config.REMOTE_USER}", "${config.REMOTE_IP}", "${config.DEPLOY_PATH}", "${config.SCRIPT}")
       remoteDeploy.deploy()
   }
