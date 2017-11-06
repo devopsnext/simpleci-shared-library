@@ -40,8 +40,8 @@ def deploy()
 	   copyArtifact()
 	 }
 	 if ( "${SCRIPT}" != "null" ) {
-	   checkFile()
-	   runCommand()
+	   //checkFile()
+	   //runCommand()
 	 }
    }
    catch (Exception error) {
