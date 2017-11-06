@@ -97,13 +97,13 @@ def copyArtifact()
    try {
      echo "env.BRANCH_NAME : "+env.BRANCH_NAME
       echo "env.BUILD_ARTIFACT : "+env.BUILD_ARTIFACT
-     if ( "${env.BUILD_ARTIFACT}" == "null" && env.BUILD_ARTIFACT.isEmpty() ) {
+     if ( "${env.WORKSPACE}" == "null" && env.WORKSPACE.isEmpty() ) {
 	   error "\u001B[41m[ERROR] please mention the artifact in prepare_Archive method..."
 	 }
 	 
-	 println "\u001B[32m[INFO] Copying the artifact ${env.BUILD_ARTIFACT} on server " + REMOTE_IP
+	 println "\u001B[32m[INFO] Copying the artifact ${env.WORKSPACE} on server " + REMOTE_IP
 	   
-	 sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${env.BUILD_ARTIFACT} ${REMOTE_USER}@${REMOTE_IP}:${DEPLOY_PATH}")
+	 sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${env.WORKSPACE} ${REMOTE_USER}@${REMOTE_IP}:${DEPLOY_PATH}")
 	 sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} unzip -o ${DEPLOY_PATH}/${env.BUILD_ARTIFACT}")
    }
    catch (Exception error) {
