@@ -95,6 +95,7 @@ def runCommand()
 def copyArtifact()
 {
    try {
+     echo "env.BUILD_ARTIFACT : "+env.BUILD_ARTIFACT
      if ( "${env.BUILD_ARTIFACT}" == "null" && env.BUILD_ARTIFACT.isEmpty() ) {
 	   error "\u001B[41m[ERROR] please mention the artifact in prepare_Archive method..."
 	 }
