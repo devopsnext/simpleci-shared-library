@@ -84,24 +84,12 @@ def takeBackup() {
 /*******************************************************
  ** Function to execute command on remote server
  *******************************************************/
-def copyBuildFiles() {
+def tarBuildFiles(String path) {
 	try {
-		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_gitbook.tar.gz _book/*")
-		if("${env.BRANCH_NAME}" != "null" && "${env.BRANCH_NAME}" != "master"){
-			sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $DEV_HOST:/app/deployables/simpleci/")
-			sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh $DEV_HOST:/app/deployables/")
-			
-		}else if("${env.BRANCH_NAME}" != "null"  && "${env.BRANCH_NAME}" == "master"){
-			sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $PROD_HOST_ONE:/app/deployables/simpleci/")
-			sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh $PROD_HOST_ONE:/app/deployables/")
-			
-
-			sh(returnStdout: true, script: "scp -r /app/ciaas/APPEX/appex_gitbook.tar.gz  $PROD_HOST_TWO:/app/deployables/simpleci/")
-			sh(returnStdout: true, script: "scp -r $WORKSPACE/setup.sh $PROD_HOST_TWO:/app/deployables/")
-			
-		}
+        echo "path in tar buildfiles : "+$path
+		sh(returnStdout: true, script: "tar -czvf  /app/ciaas/APPEX/appex_gitbook.tar.gz $path/*")
+		
 	}
-
 	catch (Exception error) {
 		wrap([$class: 'AnsiColorBuildWrapper']) {
 			println "\u001B[41m[ERROR] failed to Copy artifact on remote server..."
