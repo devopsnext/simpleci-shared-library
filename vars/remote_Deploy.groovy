@@ -16,10 +16,10 @@ def call(body) {
   body()
 
   try {
-     echo "config remote IP : "+$REMOTE_USER
+    
       def remoteDeploy = new remote()
      
-      remoteDeploy.setValue("${REMOTE_USER}", "${config.REMOTE_IP}", "${config.DEPLOY_PATH}", "${config.SCRIPT}")
+      remoteDeploy.setValue("${config.REMOTE_USER}", "${config.REMOTE_IP}", "${config.DEPLOY_PATH}", "${config.SCRIPT}")
       remoteDeploy.deploy()
   }
   catch (Exception error)
