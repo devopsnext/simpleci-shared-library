@@ -8,7 +8,7 @@
 
 import com.sapient.devops.deploy.remote
 
-def call(String REMOTE_USER,String REMOTE_IP) {
+def call() {
   def config = [:]
   body.resolveStrategy = Closure.DELEGATE_FIRST
   body.delegate = config
