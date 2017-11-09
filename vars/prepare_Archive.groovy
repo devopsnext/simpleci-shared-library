@@ -19,7 +19,7 @@ def call(body) {
 		  env.BUILD_ARTIFACT="${config.ARTIFACT}"
 		}
 		else {
-		  env.BUILD_ARTIFACT=env.WORKSPACE+"/_book/*"
+		  error "\u001B[41m[ERROR] Please mention Source to archive..."
 		}
 		  
 		println "\u001B[32m[INFO] archiving the artifact..."
