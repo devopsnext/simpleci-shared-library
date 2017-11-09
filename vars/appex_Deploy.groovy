@@ -18,7 +18,7 @@ def call(body) {
   body()
 
   try {
-      def remoteappex = new appex()
+      def remoteappex = new remote()
        remoteappex.deploy()
   }
   catch (Exception error)
