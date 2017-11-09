@@ -29,7 +29,4 @@ def call(body) {
       }
   }
 }
-def tarzip(String fileName){
-	 def remoteappex = new appex()
-     remoteappex.tarBuildFiles(String path)
-}
+
