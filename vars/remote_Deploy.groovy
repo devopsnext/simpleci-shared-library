@@ -15,12 +15,10 @@ def call(String REMOTE_USER,String REMOTE_IP) {
   body()
 
   try {
-      def remoteDeploy = new remote()
-      echo "config remote IP : "+"${REMOTE_IP}"
-      echo "config REMOTE USER : "+"${REMOTE_USER}"
-      remoteDeploy.setValue("${REMOTE_USER}", "${REMOTE_IP}", "${config.DEPLOY_PATH}", "${config.SCRIPT}")
-      //remoteDeploy.setValue("root", "10.202.11.199", "/app/deployables/appex/", "/app/deployables/setup.sh")
-      remoteDeploy.deploy()
+      //def remoteDeploy = new remote()
+      echo "config remote IP : "+REMOTE_IP
+      echo "config REMOTE USER : "+REMOTE_USER
+     
   }
   catch (Exception error)
   {
