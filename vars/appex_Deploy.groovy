@@ -6,7 +6,7 @@
 ***** Revision    :: 2.0                                                    *****
 ********************************************************************************/
 
-import com.sapient.devops.deploy.appex
+import com.sapient.devops.deploy.remote
 
 def call(body) {
   echo "body : "+body
