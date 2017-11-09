@@ -16,7 +16,7 @@ def call(String REMOTE_USER) {
   body()
 
   try {
-     echo "config remote IP : "+REMOTE_USER
+     echo "config remote IP : "+$REMOTE_USER
       def remoteDeploy = new remote()
      
       remoteDeploy.setValue("${REMOTE_USER}", "${config.REMOTE_IP}", "${config.DEPLOY_PATH}", "${config.SCRIPT}")
