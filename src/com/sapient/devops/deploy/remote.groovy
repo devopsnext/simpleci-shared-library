@@ -115,5 +115,6 @@ def copyArtifact()
 }
 
 def tarzip(String remoteIp,String path){
-  	sh 'tar -czvf  /app/ciaas/$remoteIp/appex_gitbook.tar.gz $WORKSPACE/$path/* .'
+  echo 'remote IP :' +remoteIp
+  sh 'tar -czvf  /app/ciaas/${remoteIp}/appex_gitbook.tar.gz $WORKSPACE/$path/* .'
 }
