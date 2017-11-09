@@ -9,14 +9,16 @@
 import com.sapient.devops.deploy.remote
 
 def call(body) {
+  echo "reached remote_deploy"
   def config = [:]
   body.resolveStrategy = Closure.DELEGATE_FIRST
   body.delegate = config
   body()
 
   try {
+     echo "config remote IP : "+"${config.REMOTE_IP}"
       def remoteDeploy = new remote()
-      echo "config remote IP : "+"${config.REMOTE_IP}"
+     
       remoteDeploy.setValue("${config.REMOTE_USER}", "${config.REMOTE_IP}", "${config.DEPLOY_PATH}", "${config.SCRIPT}")
       remoteDeploy.deploy()
   }
