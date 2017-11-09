@@ -16,6 +16,7 @@ def call(body) {
      wrap([$class: 'AnsiColorBuildWrapper']) {
         
 		if ( "${config.ARTIFACT}" != "null" ) {
+          echo "config Artifact Object : "+"${config.ARTIFACT}"
 		  env.BUILD_ARTIFACT="${config.ARTIFACT}"
 		}
 		else {
