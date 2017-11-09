@@ -8,17 +8,17 @@
 
 import com.sapient.devops.deploy.remote
 
-def call() {
+def call(body) {
   def config = [:]
   body.resolveStrategy = Closure.DELEGATE_FIRST
   body.delegate = config
   body()
 
   try {
-      //def remoteDeploy = new remote()
-      echo "config remote IP : "+REMOTE_IP
-      echo "config REMOTE USER : "+REMOTE_USER
-     
+      def remoteDeploy = new remote()
+      echo "config remote IP : "+"${config.REMOTE_IP}"
+      remoteDeploy.setValue("${config.REMOTE_USER}", "${config.REMOTE_IP}", "${config.DEPLOY_PATH}", "${config.SCRIPT}")
+      remoteDeploy.deploy()
   }
   catch (Exception error)
   {
