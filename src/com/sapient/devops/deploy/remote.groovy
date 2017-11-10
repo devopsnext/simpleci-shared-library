@@ -79,7 +79,7 @@ def runCommand()
 {
    try {
 	 println "\u001B[32m[INFO] Executing script on remote server " + REMOTE_IP
-	 sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} ${SCRIPT}")
+	 sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} sh ${SCRIPT}")
    }
    catch (Exception error) {
       wrap([$class: 'AnsiColorBuildWrapper']) {
