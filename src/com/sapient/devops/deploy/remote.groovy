@@ -10,17 +10,18 @@ package com.sapient.devops.deploy
 
 def REMOTE_USER
 def REMOTE_IP
-String DEPLOY_PATH,SCRIPT
+String DEPLOY_PATH,SCRIPT,COPY_PATH
 
 /*************************************
 ** Function to set the variables.
 **************************************/
-void setValue(String remote_usr,String remote_hos,String dist,String command)
+void setValue(String remote_usr,String remote_hos,String dist,String command,String path)
 {
    this.REMOTE_USER = remote_usr
    this.REMOTE_IP = remote_hos
    this.DEPLOY_PATH = dist
    this.SCRIPT = command
+   this.COPY_PATH = path
 }
 
 /*******************************************************
@@ -103,7 +104,7 @@ def copyArtifact()
 	 
 	 println "\u001B[32m[INFO] Copying the artifact ${env.WORKSPACE} on server " + REMOTE_IP
 	   
-	 sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r $WORKSPACE/$BUILD_ARTIFACT ${REMOTE_USER}@${REMOTE_IP}:${DEPLOY_PATH}")
+	 sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${REMOTE_USER}/$BUILD_ARTIFACT ${REMOTE_USER}@${REMOTE_IP}:${DEPLOY_PATH}")
 	 
    }
    catch (Exception error) {
