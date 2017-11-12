@@ -27,7 +27,9 @@ def call(body) {
 		echo "${env.BUILD_ARTIFACT}"
 		
 		if ( "${config.EXCLUDE}" != "null" ) {
-		  sh "zip -r ${config.PATH}${JOB_NAME}.zip ${env.BUILD_ARTIFACT} -x ${config.EXCLUDE}/*"
+          def NAME =  JOB_NAME.toString().replace("/","_")
+          echo "name of the job : "+NAME
+		  sh "zip -r ${config.PATH}${NAME}.zip ${env.BUILD_ARTIFACT} -x ${config.EXCLUDE}/*"
 		}
 		else {
 		  sh "zip -r ${config.PATH}${BUILD_TAG}.zip ${env.BUILD_ARTIFACT}"
