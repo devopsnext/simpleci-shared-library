@@ -105,7 +105,7 @@ def copyArtifact()
 	 println "\u001B[32m[INFO] Copying the artifact ${env.WORKSPACE} on server " + REMOTE_IP
 	   
 	 sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${COPY_PATH}/$BUILD_ARTIFACT ${REMOTE_USER}@${REMOTE_IP}:${DEPLOY_PATH}")
-     sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} unzip -o ${DEPLOY_PATH}/${env.BUILD_ARTIFACT}")
+     sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} unzip -o ${DEPLOY_PATH}/${env.BUILD_ARTIFACT} -d ${DEPLOY_PATH}")
 	 
    }
    catch (Exception error) {
