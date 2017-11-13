@@ -27,10 +27,11 @@ def call(body) {
 		
 		
        if ( "${config.EXCLUDE}" != "null" ) {
-		  sh "zip -r ${config.ARTIFACT}/${BUILD_TAG}.zip ${env.BUILD_ARTIFACT} -x ${config.EXCLUDE}\\*"
+         echo "path :  ${config.PATH}"
+		  sh "zip -r ${config.PATH}${BUILD_TAG}.zip ${env.BUILD_ARTIFACT} -x ${config.EXCLUDE}\\*"
 		}
 		else {
-		  sh "zip -r ${config.ARTIFACT}/${BUILD_TAG}.zip ${env.BUILD_ARTIFACT}"
+		  sh "zip -r ${config.PATH}${BUILD_TAG}.zip ${env.BUILD_ARTIFACT}"
 		}		
 		
 		
