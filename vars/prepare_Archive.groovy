@@ -24,10 +24,9 @@ def call(body) {
 		}
 		  
 		println "\u001B[32m[INFO] archiving the artifact..."
-		
+		 echo "path :  ${config.PATH}"
 		
        if ( "${config.EXCLUDE}" != "null" ) {
-         echo "path :  ${config.PATH}"
 		  sh "zip -r ${config.PATH}${BUILD_TAG}.zip ${env.BUILD_ARTIFACT} -x ${config.EXCLUDE}\\*"
 		}
 		else {
