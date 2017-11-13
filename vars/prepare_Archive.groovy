@@ -34,7 +34,7 @@ def call(body) {
 		}		
 		
 		
-		archiveArtifacts artifacts: "${BUILD_TAG}.zip"
+		//archiveArtifacts artifacts: "${BUILD_TAG}.zip"
 		// archiveArtifacts artifacts: "${env.BUILD_ARTIFACT}", excludes: "${config.EXCLUDE}"
 		env.BUILD_ARTIFACT = "${BUILD_TAG}.zip"
 
