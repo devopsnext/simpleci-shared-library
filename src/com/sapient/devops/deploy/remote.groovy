@@ -60,7 +60,7 @@ def checkFile()
 {
    try {
 	 def tokens = SCRIPT.split(' ')
-	 def FILE = tokens[0]
+	 def FILE = tokens[1]
 	 println "\u001B[32m[INFO] Checkng the file " + FILE + " on remote server " + REMOTE_IP
 	 
 	 sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} \"if [ -e ${FILE} ]; then echo \"ok\"; else exit 1; fi\"")
