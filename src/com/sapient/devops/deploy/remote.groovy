@@ -10,17 +10,18 @@ package com.sapient.devops.deploy
 
 def REMOTE_USER
 def REMOTE_IP
-String DEPLOY_PATH,SCRIPT
+String DEPLOY_PATH,SCRIPT,SCRIPT_FILE_NAME
 
 /*************************************
 ** Function to set the variables.
 **************************************/
-void setValue(String remote_usr,String remote_host,String dist,String command)
+void setValue(String remote_usr,String remote_host,String dist,String command,String fileName)
 {
    this.REMOTE_USER = remote_usr
    this.REMOTE_IP = remote_host
    this.DEPLOY_PATH = dist
    this.SCRIPT = command
+   this.SCRIPT_FILE_NAME = fileName
 }
 
 /*******************************************************
@@ -108,3 +109,16 @@ def copyArtifact()
    }
 }
 
+def copyScriptFile(){
+   try {
+ 
+     sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${env.WORKSPACE}${SCRIPT_FILE_NAME} ${REMOTE_USER}@${REMOTE_IP}:${DEPLOY_PATH}")
+     
+   }
+   catch (Exception error) {
+      wrap([$class: 'AnsiColorBuildWrapper']) {
+         println "\u001B[41m[ERROR] failed to Copy artifact on remote server..."
+         throw error
+      }
+   }
+}
