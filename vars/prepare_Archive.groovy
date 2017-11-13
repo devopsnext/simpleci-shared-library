@@ -16,7 +16,6 @@ def call(body) {
      wrap([$class: 'AnsiColorBuildWrapper']) {
         
 		if ( "${config.ARTIFACT}" != "null" ) {
-          echo "config Artifact Object : "+"${config.ARTIFACT}"
 		  env.BUILD_ARTIFACT="${config.ARTIFACT}"
 		}
 		else {
@@ -24,7 +23,7 @@ def call(body) {
 		}
 		  
 		println "\u001B[32m[INFO] archiving the artifact..."
-		 echo "path :  ${config.PATH}"
+		 echo "${env.BUILD_ARTIFACT}"
 		
        if ( "${config.EXCLUDE}" != "null" ) {
 		  sh "zip -r ${config.PATH}${BUILD_TAG}.zip ${env.BUILD_ARTIFACT} -x ${config.EXCLUDE}\\*"
