@@ -9,7 +9,6 @@
 import com.sapient.devops.deploy.remote
 
 def call(body) {
-  echo "reached remote_deploy"
   def config = [:]
   body.resolveStrategy = Closure.DELEGATE_FIRST
   body.delegate = config
