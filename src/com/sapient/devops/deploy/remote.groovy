@@ -59,15 +59,15 @@ def deploy()
 def checkFile()
 {
    try {
-	 //def tokens = SCRIPT.split(' ')
-	 //def FILE = tokens[0]
-	 println "\u001B[32m[INFO] Checkng the file " + SCRIPT + " on remote server " + REMOTE_IP
+	 def tokens = SCRIPT.split(' ')
+	 def FILE = tokens[0]
+	 println "\u001B[32m[INFO] Checkng the file " + FILE + " on remote server " + REMOTE_IP
 	 
-	 sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} \"if [ -e ${SCRIPT} ]; then echo \"ok\"; else exit 1; fi\"")
+	 sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} \"if [ -e ${FILE} ]; then echo \"ok\"; else exit 1; fi\"")
    }
    catch (Exception error) {
       wrap([$class: 'AnsiColorBuildWrapper']) {
-         println "\u001B[41m[ERROR] file " + SCRIPT + "  is not available on remote server " + REMOTE_IP
+         println "\u001B[41m[ERROR] file " + FILE + "  is not available on remote server " + REMOTE_IP
          throw error
       }
    }
@@ -80,7 +80,7 @@ def runCommand()
 {
    try {
 	 println "\u001B[32m[INFO] Executing script on remote server " + REMOTE_IP
-	 sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} sh ${SCRIPT}")
+	 sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} ${SCRIPT}")
    }
    catch (Exception error) {
       wrap([$class: 'AnsiColorBuildWrapper']) {
@@ -116,7 +116,3 @@ def copyArtifact()
    }
 }
 
-def tarzip(String remoteIp,String path){
-  echo 'remote IP :' +remoteIp
-  sh 'tar -czvf  /app/ciaas/'+remoteIp+'/appex_gitbook.tar.gz $WORKSPACE/'+path+'/* .'
-}
