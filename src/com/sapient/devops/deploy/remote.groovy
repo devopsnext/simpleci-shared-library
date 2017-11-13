@@ -15,10 +15,10 @@ String DEPLOY_PATH,SCRIPT
 /*************************************
 ** Function to set the variables.
 **************************************/
-void setValue(String remote_usr,String remote_hos,String dist,String command)
+void setValue(String remote_usr,String remote_host,String dist,String command)
 {
    this.REMOTE_USER = remote_usr
-   this.REMOTE_IP = remote_hos
+   this.REMOTE_IP = remote_host
    this.DEPLOY_PATH = dist
    this.SCRIPT = command
 }
@@ -38,10 +38,6 @@ def deploy()
 	 }
 	 if ( "${DEPLOY_PATH}" != "null" ) {
 	   copyArtifact()
-	 }
-	 if ( "${SCRIPT}" != "null" ) {
-	   checkFile()
-	   runCommand()
 	 }
    }
    catch (Exception error) {
