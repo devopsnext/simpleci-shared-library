@@ -19,7 +19,7 @@ void setValue(String remote_usr,String remote_host,String dist,String command,St
 {
    this.REMOTE_USER = remote_usr
    this.REMOTE_IP = remote_host
-   this.DEPLOY_PATH = dist
+   this.REMOTE_PATH = dist
    this.SCRIPT = command
    this.SCRIPT_FILE_NAME = fileName
 }
