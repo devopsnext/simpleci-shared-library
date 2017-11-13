@@ -24,16 +24,15 @@ def call(body) {
 		}
 		  
 		println "\u001B[32m[INFO] archiving the artifact..."
-		echo "${env.BUILD_ARTIFACT}"
 		
-		if ( "${config.EXCLUDE}" != "null" ) {
-          
-		  sh "zip -r ${config.PATH}${BUILD_TAG}.zip ${env.BUILD_ARTIFACT} -x ${config.EXCLUDE}/*"
+		
+       if ( "${config.EXCLUDE}" != "null" ) {
+		  sh "zip -r ${BUILD_TAG}.zip ${env.BUILD_ARTIFACT} -x ${config.EXCLUDE}\\*"
 		}
 		else {
-          echo "reqched else"+"${config.PATH}${BUILD_TAG}.zip"
-		  sh "zip -r ${config.PATH}${BUILD_TAG}.zip ${env.BUILD_ARTIFACT}"
-		}
+		  sh "zip -r ${BUILD_TAG}.zip ${env.BUILD_ARTIFACT}"
+		}		
+		
 		
 		archiveArtifacts artifacts: "${BUILD_TAG}.zip"
 		// archiveArtifacts artifacts: "${env.BUILD_ARTIFACT}", excludes: "${config.EXCLUDE}"
