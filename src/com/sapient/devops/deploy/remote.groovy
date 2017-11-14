@@ -27,12 +27,9 @@ void setDeployValue(String remote_usr,String remote_host,String dist)
 ** Functipn to set the variables for REMOTE_EXECUTE
 *******************************************************/
 
-void setExecuteValue(String remote_usr,String remote_host,String dist,String fileName,String args)
+void setExecuteValue(String fileName,String args)
 {	
-  echo "args variable : "+args
-   this.REMOTE_USER = remote_usr
-   this.REMOTE_IP = remote_host
-   this.REMOTE_PATH = dist
+  echo "REMOTE_USER variable in Execute value: "+REMOTE_USER
    this.SCRIPT_FILENAME = fileName
    this.SCRIPT_ARGS = args
 }
