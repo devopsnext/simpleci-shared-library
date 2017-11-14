@@ -26,8 +26,11 @@ void setDeployValue(String remote_usr,String remote_host,String dist)
 ** Functipn to set the variables for REMOTE_EXECUTE
 *******************************************************/
 
-void setExecuteValue(String fileName,String args)
+void setExecuteValue(String remote_usr,String remote_host,String dist,String fileName,String args)
 {	
+   this.REMOTE_USER = remote_usr
+   this.REMOTE_IP = remote_host
+   this.REMOTE_PATH = dist
    this.SCRIPT_FILENAME = fileName
    this.SCRIPT_ARGS = args
 }
@@ -125,7 +128,7 @@ def copyScriptFile(){
    }
    catch (Exception error) {
       wrap([$class: 'AnsiColorBuildWrapper']) {
-         println "\u001B[41m[ERROR] failed to Copy artifact on remote server..."
+         println "\u001B[41m[ERROR] failed to Copy Script file on remote server..."
          throw error
       }
    }
