@@ -28,7 +28,6 @@ void setDeployValue(String remote_usr,String remote_host,String dist)
 
 void setExecuteValue(String fileName,String args)
 {	
-  echo "REMOTE_USER variable in Execute value: "+REMOTE_USER
    this.SCRIPT_FILENAME = fileName
    this.SCRIPT_ARGS = args
 }
