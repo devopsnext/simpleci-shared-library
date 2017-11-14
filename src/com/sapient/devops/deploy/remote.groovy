@@ -10,18 +10,19 @@ package com.sapient.devops.deploy
 
 def REMOTE_USER
 def REMOTE_IP
-String DEPLOY_PATH,SCRIPT,SCRIPT_FILE_NAME
+String DEPLOY_PATH,SCRIPT,SCRIPT_FILE_NAME,SCRIPT_ARGS
 
 /*************************************
 ** Function to set the variables.
 **************************************/
-void setValue(String remote_usr,String remote_host,String dist,String command,String fileName)
+void setValue(String remote_usr,String remote_host,String dist,String command,String fileName,String args)
 {
    this.REMOTE_USER = remote_usr
    this.REMOTE_IP = remote_host
    this.REMOTE_PATH = dist
    this.SCRIPT = command
-   this.SCRIPT_FILE_NAME = fileName
+   this.SCRIPT_FILENAME = fileName
+   this.SCRIPT_ARGS = args
 }
 
 /*******************************************************
