@@ -13,9 +13,21 @@ def REMOTE_IP
 String REMOTE_PATH,SCRIPT_FILENAME,SCRIPT_ARGS
 
 /*************************************
-** Function to set the variables.
+** Function to set the variables for REMOTE_DEPLOY.
 **************************************/
-void setValue(String remote_usr,String remote_host,String dist,String fileName,String args)
+void setDeployValue(String remote_usr,String remote_host,String dist)
+{	
+  echo "args variable : "+args
+   this.REMOTE_USER = remote_usr
+   this.REMOTE_IP = remote_host
+   this.REMOTE_PATH = dist
+}
+
+/*******************************************************
+** Functipn to set the variables for REMOTE_EXECUTE
+*******************************************************/
+
+void setExecuteValue(String remote_usr,String remote_host,String dist,String fileName,String args)
 {	
   echo "args variable : "+args
    this.REMOTE_USER = remote_usr
