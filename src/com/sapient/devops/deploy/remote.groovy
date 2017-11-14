@@ -10,7 +10,7 @@ package com.sapient.devops.deploy
 
 def REMOTE_USER
 def REMOTE_IP
-String DEPLOY_PATH,SCRIPT,SCRIPT_FILE_NAME,SCRIPT_ARGS
+String DEPLOY_PATH,SCRIPT,SCRIPT_FILENAME,SCRIPT_ARGS
 
 /*************************************
 ** Function to set the variables.
@@ -113,7 +113,7 @@ def copyArtifact()
 def copyScriptFile(){
    try {
  
-     sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${env.WORKSPACE}/${SCRIPT_FILE_NAME} ${REMOTE_USER}@${REMOTE_IP}:${DEPLOY_PATH}")
+     sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${env.WORKSPACE}/${SCRIPT_FILENAME} ${REMOTE_USER}@${REMOTE_IP}:${DEPLOY_PATH}")
      
    }
    catch (Exception error) {
