@@ -17,7 +17,6 @@ String REMOTE_PATH,SCRIPT_FILENAME,SCRIPT_ARGS
 **************************************/
 void setDeployValue(String remote_usr,String remote_host,String dist)
 {	
-  echo "args variable : "+args
    this.REMOTE_USER = remote_usr
    this.REMOTE_IP = remote_host
    this.REMOTE_PATH = dist
