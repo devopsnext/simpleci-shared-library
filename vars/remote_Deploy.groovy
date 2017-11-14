@@ -18,7 +18,7 @@ def call(body) {
     
       def remoteDeploy = new remote()
      
-      remoteDeploy.setValue("${config.REMOTE_USER}", "${config.REMOTE_IP}", "${config.REMOTE_PATH}", "${config.SCRIPT}","${config.SCRIPT_FILENAME}","${config.SCRIPT_ARGS}")
+      remoteDeploy.setValue("${config.REMOTE_USER}", "${config.REMOTE_IP}", "${config.REMOTE_PATH}", "${config.SCRIPT}","${config.SCRIPTFILENAME}","${config.SCRIPT_ARGS}")
       remoteDeploy.deploy()
   }
   catch (Exception error)
