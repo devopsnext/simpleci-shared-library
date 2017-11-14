@@ -38,7 +38,7 @@ def deploy()
 	 if ( "${REMOTE_IP}" == "null" ) {
 	   error "\u001B[41m[ERROR] Please mention the Remote Host/IP...."
 	 }
-	 if ( "${DEPLOY_PATH}" != "null" ) {
+	 if ( "${REMOTE_PATH}" != "null" ) {
 	   copyArtifact()
 	 }
    }
@@ -99,7 +99,7 @@ def copyArtifact()
 	 
 	 println "\u001B[32m[INFO] Copying the artifact ${env.BUILD_ARTIFACT} on server " + REMOTE_IP
 	   
-	 sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${env.BUILD_ARTIFACT} ${REMOTE_USER}@${REMOTE_IP}:${DEPLOY_PATH}")
+	 sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${env.BUILD_ARTIFACT} ${REMOTE_USER}@${REMOTE_IP}:${REMOTE_PATH}")
      
    }
    catch (Exception error) {
@@ -113,7 +113,7 @@ def copyArtifact()
 def copyScriptFile(){
    try {
  
-     sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${env.WORKSPACE}/${SCRIPT_FILENAME} ${REMOTE_USER}@${REMOTE_IP}:${DEPLOY_PATH}")
+     sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${env.WORKSPACE}/${SCRIPT_FILENAME} ${REMOTE_USER}@${REMOTE_IP}:${REMOTE_PATH}")
      
    }
    catch (Exception error) {
