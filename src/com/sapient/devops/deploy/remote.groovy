@@ -10,7 +10,7 @@ package com.sapient.devops.deploy
 
 def REMOTE_USER
 def REMOTE_IP
-String DEPLOY_PATH,SCRIPT,SCRIPT_FILENAME,SCRIPT_ARGS
+String REMOTE_PATH,SCRIPT,SCRIPT_FILENAME,SCRIPT_ARGS
 
 /*************************************
 ** Function to set the variables.
