@@ -10,7 +10,7 @@ package com.sapient.devops.deploy
 
 def REMOTE_USER
 def REMOTE_IP
-String REMOTE_PATH,SCRIPT,SCRIPT_FILENAME,SCRIPT_ARGS
+String REMOTE_PATH,SCRIPT_FILENAME,SCRIPT_ARGS
 
 /*************************************
 ** Function to set the variables.
@@ -55,8 +55,8 @@ def deploy()
 def checkFile()
 {
    try {
-	 def tokens = SCRIPT.split(' ')
-	 def FILE = tokens[1]
+	 
+	 def FILE = REMOTE_PATH+SCRIPT_FILENAME
 	 println "\u001B[32m[INFO] Checkng the file " + FILE + " on remote server " + REMOTE_IP
 	 
 	 sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} \"if [ -e ${FILE} ]; then echo \"ok\"; else exit 1; fi\"")
@@ -76,7 +76,7 @@ def runCommand()
 {
    try {
 	 println "\u001B[32m[INFO] Executing script on remote server " + REMOTE_IP
-	 sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} ${SCRIPT}")
+	 sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_IP} sh ${REMOTE_PATH}${SCRIPT_FILENAME} ${SCRIPT_ARGS}")
    }
    catch (Exception error) {
       wrap([$class: 'AnsiColorBuildWrapper']) {
