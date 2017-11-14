@@ -16,7 +16,8 @@ String REMOTE_PATH,SCRIPT_FILENAME,SCRIPT_ARGS
 ** Function to set the variables.
 **************************************/
 void setValue(String remote_usr,String remote_host,String dist,String fileName,String args)
-{
+{	
+  echo "args variable : "+args
    this.REMOTE_USER = remote_usr
    this.REMOTE_IP = remote_host
    this.REMOTE_PATH = dist
