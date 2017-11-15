@@ -15,28 +15,19 @@ def call(body) {
   try {
      wrap([$class: 'AnsiColorBuildWrapper']) {
         
-		if ( "${config.ARTIFACT_PATH}" != "null" ) {
-          echo "conf artifact path : ${config.ARTIFACT_PATH}"
-          env.BUILD_ARTIFACT="${env.WORKSPACE}/${config.ARTIFACT_PATH}"
-          echo "BUILD ARTIFACT : "+env.BUILD_ARTIFACT
+		if ( "${config.ARTIFACT_PATH}" == "null" ) {
+			 error "\u001B[41m[ERROR] Please mention Source to archive..."
 		}
-		else {
-		  error "\u001B[41m[ERROR] Please mention Source to archive..."
-		}
-		  
+		
 		println "\u001B[32m[INFO] archiving the artifact..."
-		 echo "${env.BUILD_ARTIFACT}"
+		 echo "${config.ARTIFACT_PATH}"
 		
        if ( "${config.EXCLUDE}" != "null" ) {
-		  sh "zip -r ${BUILD_TAG}.zip ${env.BUILD_ARTIFACT} -x ${config.EXCLUDE}\\*"
+		  sh "cd ${env.WORKSPACE} zip -r ${BUILD_TAG}.zip ${config.ARTIFACT_PATH} -x ${config.EXCLUDE}\\*"
 		}
 		else {
           sh "cd ${env.WORKSPACE} ; zip -r ${BUILD_TAG}.zip ${config.ARTIFACT_PATH}"
 		}		
-		
-		
-		//archiveArtifacts artifacts: "${BUILD_TAG}.zip"
-		// archiveArtifacts artifacts: "${env.BUILD_ARTIFACT}", excludes: "${config.EXCLUDE}"
 		env.BUILD_ARTIFACT = "${BUILD_TAG}.zip"
 
      }
