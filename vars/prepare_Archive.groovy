@@ -29,7 +29,7 @@ def call(body) {
 		  sh "zip -r ${BUILD_TAG}.zip ${env.BUILD_ARTIFACT} -x ${config.EXCLUDE}\\*"
 		}
 		else {
-		  sh "zip -r ${BUILD_TAG}.zip cd ${env.BUILD_ARTIFACT} ${env.BUILD_ARTIFACT}"
+		  sh "zip ${BUILD_TAG}.zip ${env.BUILD_ARTIFACT}"
 		}		
 		
 		
