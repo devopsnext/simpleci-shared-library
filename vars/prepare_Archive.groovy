@@ -17,6 +17,7 @@ def call(body) {
         
 		if ( "${config.ARTIFACT_PATH}" != "null" ) {
 		  env.BUILD_ARTIFACT="${config.ARTIFACT_PATH}"
+          echo "BUILD ARTIFACT : "+env.BUILD_ARTIFACT
 		}
 		else {
 		  error "\u001B[41m[ERROR] Please mention Source to archive..."
