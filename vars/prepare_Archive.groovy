@@ -16,6 +16,7 @@ def call(body) {
      wrap([$class: 'AnsiColorBuildWrapper']) {
         
 		if ( "${config.ARTIFACT_PATH}" != "null" ) {
+          echo "conf artifact path : ${config.ARTIFACT_PATH}"
           env.BUILD_ARTIFACT="${env.WORKSPACE}/${config.ARTIFACT_PATH}"
           echo "BUILD ARTIFACT : "+env.BUILD_ARTIFACT
 		}
