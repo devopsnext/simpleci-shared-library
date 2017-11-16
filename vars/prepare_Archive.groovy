@@ -16,7 +16,7 @@ def call(body) {
      wrap([$class: 'AnsiColorBuildWrapper']) {
         
 		if ( "${config.ARTIFACT_PATH}" == "null" ) {
-			 "${config.ARTIFACT_PATH}" = ""
+			  error "\u001B[41m[ERROR] Please mention Source to archive..."
 		}
 		
 		println "\u001B[32m[INFO] archiving the artifact..."
