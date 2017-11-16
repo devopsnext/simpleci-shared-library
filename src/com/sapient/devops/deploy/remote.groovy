@@ -123,7 +123,7 @@ def copyArtifact()
 def copyScriptFile(){
    try {
  
-     sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${env.WORKSPACE}/${SCRIPT_FILENAME} ${REMOTE_USER}@${REMOTE_IP}:${REMOTE_PATH}")
+     sh(returnStdout: true, script: "scp -o StrictHostKeyChecking=no -r ${env.WORKSPACE}/scripts/${SCRIPT_FILENAME} ${REMOTE_USER}@${REMOTE_IP}:${REMOTE_PATH}")
      
    }
    catch (Exception error) {
