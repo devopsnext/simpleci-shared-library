@@ -1,0 +1,1 @@
+This step is used to perform Git clone operation.
