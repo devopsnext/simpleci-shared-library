@@ -1,11 +1,4 @@
 #!groovy
-/************************************************************
-***** Description :: This Package is used to deploy AEM *****
-***** Author      :: Mukul Garg                         *****
-***** Date        :: 06/01/2017                         *****
-***** Revision    :: 1.0                                *****
-************************************************************/
-
 package com.yantrashala.devops.deploy
 
 String AUTHOR_IP,PUBLISH_IP,ARTIFACT_NAME,ARTIFACT_VERSION,USERNAME,PASSWORD

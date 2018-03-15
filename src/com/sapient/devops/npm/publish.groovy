@@ -1,11 +1,4 @@
 #!groovy
-/**************************************************************
-***** Description :: This Package is used for NPM Publish *****
-***** Author      :: Mukul Garg                           *****
-***** Date        :: 04/24/2017                           *****
-***** Revision    :: 2.0                                  *****
-**************************************************************/
-
 package com.yantrashala.devops.npm
 
 String NPM_PUBLISH, NPM_REPO, NPM_RELEASE

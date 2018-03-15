@@ -1,11 +1,4 @@
 #!groovy
-/*************************************************************************
-***** Description :: This Custom Library is used for Git Clone Setup *****
-***** Author      :: Mukul Garg                                      *****
-***** Date        :: 04/24/2017                                      *****
-***** Revision    :: 2.0                                             *****
-*************************************************************************/
-
 import com.yantrashala.devops.scm.git
 import com.yantrashala.devops.email.gitEmail
 

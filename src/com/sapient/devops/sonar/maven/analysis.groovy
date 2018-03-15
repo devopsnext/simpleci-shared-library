@@ -1,11 +1,4 @@
 #!groovy
-/***********************************************************************
-***** Description :: This Package is used for Maven Sonar Analysis *****
-***** Author      :: Mukul Garg                                    *****
-***** Date        :: 04/24/2017                                    *****
-***** Revision    :: 2.0                                           *****
-***********************************************************************/
-
 package com.yantrashala.devops.sonar.maven
 
 String MAVEN_ROOT_POM,SONAR_TOKEN

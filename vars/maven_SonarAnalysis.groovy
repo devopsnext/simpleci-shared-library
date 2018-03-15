@@ -1,11 +1,4 @@
 #!groovy
-/******************************************************************************
-***** Description :: This Custom Library is used for Maven Sonar Analysis *****
-***** Author      :: Mukul Garg                                           *****
-***** Date        :: 04/24/2017                                           *****
-***** Revision    :: 2.0                                                  *****
-******************************************************************************/
-
 import com.yantrashala.devops.sonar.maven.analysis
 import com.yantrashala.devops.sonar.QualityGates
 

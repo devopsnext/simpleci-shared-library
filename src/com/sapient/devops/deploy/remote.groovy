@@ -1,11 +1,4 @@
 #!groovy
-/***************************************************************************
-***** Description :: This Package is used to deploy to remote location *****
-***** Author      :: Mukul Garg                                        *****
-***** Date        :: 06/01/2017                                        *****
-***** Revision    :: 1.0                                               *****
-***************************************************************************/
-
 package com.yantrashala.devops.deploy
 
 def REMOTE_USER

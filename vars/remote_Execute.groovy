@@ -1,11 +1,4 @@
 #!groovy
-/******************************************************************************************
-***** Description :: This Custom Library is used to Execute commands on Remote Server *****
-***** Author      :: Mukul Garg                                                       *****
-***** Date        :: 04/24/2017                                                       *****
-***** Revision    :: 2.0                                                              *****
-******************************************************************************************/
-
 import com.yantrashala.devops.deploy.remote
 
 def call(body) {

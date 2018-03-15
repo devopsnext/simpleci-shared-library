@@ -1,10 +1,4 @@
 #!groovy
-/***************************************************************************
-***** Description :: This Custom Library is used to Clean up Workspace *****
-***** Author      :: Mukul Garg                                        *****
-***** Date        :: 04/24/2017                                        *****
-***** Revision    :: 2.0                                               *****
-***************************************************************************/
 
 def call(body) {
   def config = [:]
