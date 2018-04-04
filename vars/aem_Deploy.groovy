@@ -1,5 +1,5 @@
 #!groovy
-import com.yantrashala.devops.deploy.aem
+import com.devopsnext.devops.deploy.aem
 
 def call(body) {
   def config = [:]

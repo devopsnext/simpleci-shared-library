@@ -1,5 +1,5 @@
 #!groovy
-package com.yantrashala.devops.jobProperty
+package com.devopsnext.devops.jobProperty
 
 String WORKSPACE = pwd()
 String UPSTREAM_JOBS

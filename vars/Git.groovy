@@ -1,6 +1,6 @@
 #!groovy
-import com.yantrashala.devops.scm.git
-import com.yantrashala.devops.email.gitEmail
+import com.devopsnext.devops.scm.git
+import com.devopsnext.devops.email.gitEmail
 
 def call(body) 
 {

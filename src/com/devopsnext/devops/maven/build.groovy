@@ -1,32 +1,35 @@
 #!groovy
-package com.yantrashala.devops.maven
+package com.devopsnext.devops.maven
 
-String MAVEN_ROOT_POM
+String MAVEN_GOALS,MAVEN_ROOT_POM
 
 /*************************************
 ** Function to set the variables.
 **************************************/
-void setValue(String root_pom)
+void setValue(String maven_goals,String root_pom)
 {
+   this.MAVEN_GOALS    =  maven_goals
    this.MAVEN_ROOT_POM =  root_pom
 }
 
 /*************************************
-** Function to unit testing the code.
+** Function to compile the code.
 **************************************/
-def unitTest()
+def compile()
 {
    try {
       if ( "${MAVEN_ROOT_POM}" == "null" ) {
 	    MAVEN_ROOT_POM = "pom.xml"
 	  }
+	  if ( "${MAVEN_GOALS}" == "null" ) {
+	    MAVEN_GOALS = "clean install"
+	  }
 	  if (fileExists("${MAVEN_ROOT_POM}"))
       {
          wrap([$class: 'AnsiColorBuildWrapper']) {
-            println "\u001B[32m[INFO] testing code from pom ${MAVEN_ROOT_POM}, please wait..."
+            println "\u001B[32m[INFO] compiling code from pom ${MAVEN_ROOT_POM}, please wait..."
             println "\u001B[32mPOM VERSION => " + getVersion()
-			
-			sh "mvn -f ${MAVEN_ROOT_POM} -B test"
+            sh "mvn -f ${MAVEN_ROOT_POM} -B ${MAVEN_GOALS} -Dmaven.test.skip=true"
 			currentBuild.result = 'SUCCESS'
 			step([$class: 'StashNotifier'])
          }
@@ -63,3 +66,4 @@ def getVersion()
       }
    }
 }
+

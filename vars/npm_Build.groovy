@@ -1,5 +1,5 @@
 #!groovy
-import com.yantrashala.devops.npm.build
+import com.devopsnext.devops.npm.build
 
 def call(body) {
   def config = [:]

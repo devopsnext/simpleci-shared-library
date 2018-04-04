@@ -1,5 +1,5 @@
 #!groovy
-package com.yantrashala.devops.npm
+package com.devopsnext.devops.npm
 
 String NPM_RUN
 

@@ -1,6 +1,6 @@
 #!groovy
-import com.yantrashala.devops.sonar.maven.analysis
-import com.yantrashala.devops.sonar.QualityGates
+import com.devopsnext.devops.sonar.maven.analysis
+import com.devopsnext.devops.sonar.QualityGates
 
 def call(body) {
   def config = [:]

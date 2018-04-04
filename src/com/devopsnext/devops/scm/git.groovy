@@ -1,5 +1,5 @@
 #!groovy
-package com.yantrashala.devops.scm
+package com.devopsnext.devops.scm
 
 String WORKSPACE = pwd()
 

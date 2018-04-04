@@ -1,5 +1,5 @@
 #!groovy
-package com.yantrashala.devops.sonar.npm
+package com.devopsnext.devops.sonar.npm
 
 String SONAR_PROPERTY
 

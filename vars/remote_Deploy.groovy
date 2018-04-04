@@ -1,5 +1,5 @@
 #!groovy
-import com.yantrashala.devops.deploy.remote
+import com.devopsnext.devops.deploy.remote
 
 def call(body) {
   def config = [:]

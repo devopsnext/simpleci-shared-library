@@ -1,5 +1,5 @@
 #!groovy
-package com.yantrashala.devops.deploy
+package com.devopsnext.devops.deploy
 
 String AUTHOR_IP,PUBLISH_IP,ARTIFACT_NAME,ARTIFACT_VERSION,USERNAME,PASSWORD
 

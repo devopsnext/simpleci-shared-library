@@ -1,5 +1,5 @@
 #!groovy
-package com.yantrashala.devops.maven
+package com.devopsnext.devops.maven
 
 String MAVEN_ROOT_POM
 

@@ -1,5 +1,5 @@
 #!groovy
-import com.yantrashala.devops.jobProperty.jobProperties
+import com.devopsnext.devops.jobProperty.jobProperties
 
 def call(body) 
 {

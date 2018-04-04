@@ -1,10 +1,11 @@
 #!groovy
-package com.yantrashala.devops.email
+package com.devopsnext.devops.email
 
-def sendmail(String to)
+def gitSendmail(String to, String from, String subject, String body)
 {
    try {
     String currentResult = 'SUCCESS'
+    // String previousResult = currentBuild.getPreviousBuild().result
     def causes = currentBuild.rawBuild.getCauses()
     def cause = null
     if (!causes.isEmpty()) 
@@ -12,20 +13,25 @@ def sendmail(String to)
         cause = causes[0].getShortDescription()
     }
     causes = null
-    subject = "${env.JOB_NAME} | $currentResult"
+    subject = "Stage | Code Checkout | $currentResult"
     body = """
     <html>
     <body bgcolor=' #aed6f1'>
     <font face='verdana' color='black'><p><pre>
     Hi Team,
 
-    <p>Job '${env.JOB_NAME}' has a '${currentBuild.currentResult}' in BuildNumber :- '${env.BUILD_NUMBER}'</p>
-	<p>Full logs are present at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>
-	  
+    Git checkout stage is completed successfully. Please find the Git repository details:
+
+    GIT Repository URL  => ${env.GIT_URL}
+    GIT Present Branch  => ${env.GIT_BRANCH}
+    GIT Commit Hash     => ${env.GIT_COMMIT}
+    Git Committer Email => ${env.GIT_AUTHOR_EMAIL}</font>
+
+
     <font face='verdana' color='red'>Note - this is an auto generated email, please don't reply to it.</font>
 
     <font face='verdana' color='blue'>Thanks,
-    SimpleCI Team</font></pre></p></body></html>"""
+     DevOps Team</font></pre></p></body></html>"""
 
     if (to != null && !to.isEmpty()) 
     {

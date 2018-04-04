@@ -1,5 +1,5 @@
 #!groovy
-package com.yantrashala.devops.deploy
+package com.devopsnext.devops.deploy
 
 def REMOTE_USER
 def REMOTE_IP

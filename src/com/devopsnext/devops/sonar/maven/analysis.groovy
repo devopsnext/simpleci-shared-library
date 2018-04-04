@@ -1,5 +1,5 @@
 #!groovy
-package com.yantrashala.devops.sonar.maven
+package com.devopsnext.devops.sonar.maven
 
 String MAVEN_ROOT_POM,SONAR_TOKEN
 

@@ -1,5 +1,5 @@
 #!groovy
-package com.yantrashala.devops.sonar
+package com.devopsnext.devops.sonar
 
 /**************************************************************
 ***** Function to check the quality gates and pause pipeline

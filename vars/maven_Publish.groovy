@@ -1,5 +1,5 @@
 #!groovy
-import com.yantrashala.devops.maven.publish
+import com.devopsnext.devops.maven.publish
 
 def call(body) {
   def config = [:]

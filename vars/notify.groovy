@@ -1,5 +1,5 @@
 #!groovy
-import com.yantrashala.devops.email.sendmail
+import com.devopsnext.devops.email.sendmail
 
 def call(body) 
 {
