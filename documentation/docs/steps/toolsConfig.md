@@ -1,7 +1,7 @@
 # toolsConfig
 
 ## Description
-This step is used to perform deployment at AEM server
+This step is used to set the PATH variables, JAVA_HOME, MAVEN-HOME
 
 ## Prerequsites
 none
