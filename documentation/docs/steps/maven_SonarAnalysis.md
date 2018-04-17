@@ -10,31 +10,23 @@ none
 
 | parameter | mandatory | default | possible values | derived from |
 | ----------|-----------|---------|-----------------|--------------|
-| MAVEN_ROOT_POM | yes |  |  | 'config.MAVEN_ROOT_POM' |
-| SONAR_TOKEN      | yes |  |  | 'config.SONAR_TOKEN' |
-| BRANCH | yes |  |  |
-| SONAR_BRANCH | yes |  |  |
-| username | yes  |  |   |
-| password | yes |  |   |
+| maven_root_pom | yes |  |  | 'config.MAVEN_ROOT_POM' |
+| sonar_token      | yes |  |  | 'config.SONAR_TOKEN' |
+| branch | yes |  |  |
+| sonar_branch | yes |  |  |
 
 
-* `author_ip` defines the Author instance that is used to design, create and review the content which will be published on the application in the future. 
-* `publish_ip` defines the Publish instance that is used to make the designed application available to the public and is located in a demilitarized zone. The default port used by the instance is 4503.
-* `artifact_name` defines the name the artifact.
-* `artifact_version` defines the version number of the artifact.
-* `username` specifies the server username.
-* `password` defines the server password in encryted form.
+* `maven_root_pom` defines the pom.xml for the module.
+* `sonar_token` defines the sonar token.
+* `branch` defines the name of the GIT branch.
+* `sonar_branch` defines the sonar branch.
 
 
 ## Step configuration
 The following parameters can also be specified as step parameters using the global configuration file:
 
-* `author_ip`
-* `publish_ip`
-* `artifact_name`
-* `artifact_version`
-* `username`
-* `password`
+* `maven_root_pom`
+* `sonar_token`
 
 ## Exceptions
 
@@ -43,5 +35,5 @@ None
 ## Example
 
 ```groovy
-aem_Deploy
+maven_SonarAnalysis
 ```
