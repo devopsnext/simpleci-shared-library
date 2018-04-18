@@ -1,22 +1,22 @@
 # jobProperty
 
 ## Description
-This step is used to set the job property as UPSTREAM_JOB
+This task is used to determine the current job as Upstream or downstream.
 
 ## Prerequsites
 none
 
 ## Parameters
 
-| parameter | mandatory | default | possible values | derived from |
-| ----------|-----------|---------|-----------------|--------------|
-| upstream_jobs | no |  |  | 'config.UPSTREAM_JOBS' |
+| parameter | mandatory | derived from |
+| ----------|-----------|--------------|
+| upstream_jobs | no | 'config.UPSTREAM_JOBS' |
 
 
 * `upstream_jobs` defines as a configured project that triggers a project as of its execution.
 
-## Step configuration
-The following parameters can also be specified as step parameters using the global configuration file:
+## Configuration
+The following parameters can also be specified as input parameters using the global configuration file:
 
 * `upstream_jobs`
 
