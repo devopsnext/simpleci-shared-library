@@ -10,7 +10,6 @@ def call(body)
    body()
    try {
       def scm = new git()
-	  // g.setValue("${config.UPSTREAM_JOBS}")
       scm.gitCheckout()
    }
    catch (Exception error)
@@ -30,7 +29,7 @@ def call(body)
         Code checkout stage is in progress...
 
       Regards,
-      Mukul Garg"""
+      AAA"""
 
       def gitMail = new gitEmail()
       gitMail.gitSendmail("$TO","$FROM","$SUBJECT","$BODY")
