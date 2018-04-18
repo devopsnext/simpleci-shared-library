@@ -14,7 +14,7 @@ None
 
 
 
-## Step configuration
+## Configuration
 
 None
 
