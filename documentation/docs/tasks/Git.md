@@ -20,7 +20,7 @@ none
 * `repository` defines the Git repository name
 
 
-## Step configuration
+## Configuration
 The following parameters can also be derived from environment variables:
 
 * `branch`
