@@ -1,7 +1,7 @@
 site_name: SimpleCI Shared Library
 pages:
     - Home: index.md
-    - 'Library steps':
+    - 'Reusable tasks':
         - GIT: steps/Git.md
         - AEM Deploy: steps/aem_Deploy.md
         - Build ENV Variables: steps/buildEnvVariables.md
