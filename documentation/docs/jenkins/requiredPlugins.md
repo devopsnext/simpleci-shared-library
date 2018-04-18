@@ -1,6 +1,6 @@
 # Required Plugins
 
-The following Jenkins plugins are needed in order to use the Piper Library.
+The following Jenkins plugins are needed in order to use the SimpleCI shared library.
 The list below contains the plugin Id and version of the plugin.
 
 **Plugins**
