@@ -16,10 +16,10 @@ none
 | script | yes |  |  | 'config.SCRIPT' |
 
 
-* `remote_user` defines the Author instance that is used to design, create and review the content which will be published on the application in the future. 
-* `remote_ip` defines the Publish instance that is used to make the designed application available to the public and is located in a demilitarized zone. The default port used by the instance is 4503.
-* `deploy_path` defines the name the artifact.
-* `script` defines the version number of the artifact.
+* `remote_user` defines the remote server username.
+* `remote_ip` defines the remote server IP address.
+* `deploy_path` defines the path to deploy the script on server.
+* `script` defines the script needed to be deployed on server.
 
 
 ## Step configuration
