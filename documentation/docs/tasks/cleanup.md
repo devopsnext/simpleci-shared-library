@@ -8,11 +8,11 @@ None
 
 ## Parameters
 
-| parameter | mandatory | default | possible values |
-| ----------|-----------|---------|-----------------|
+| parameter | mandatory | derived from |
+| ----------|-----------||
 
 
-## Step configuration
+## Configuration
 
 None
 
