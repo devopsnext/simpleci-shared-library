@@ -9,7 +9,7 @@ none
 ## Parameters
 
 | parameter | mandatory | derived from |
-| ----------|-----------|---------|-----------------|--------------|
+| ----------|-----------|--------------|
 | maven_goals | no | 'config.MAVEN_GOALS' |
 | maven_root_pom | no | 'config.MAVEN_ROOT_POM' |
 
