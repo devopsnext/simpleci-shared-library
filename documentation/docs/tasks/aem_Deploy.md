@@ -26,8 +26,8 @@ none
 * `password` defines the server password in encryted form.
 
 
-## Step configuration
-The following parameters can also be specified as step parameters using the global configuration file:
+## Configuration
+The following parameters can also be specified as input parameters using the global configuration file:
 
 * `author_ip`
 * `publish_ip`
