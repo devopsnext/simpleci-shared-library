@@ -9,7 +9,7 @@ None
 ## Parameters
 
 | parameter | mandatory | derived from |
-| ----------|-----------|---------|-----------------|--------------|
+| ----------|-----------|---------|
 |job | yes | 'config.BUILD_JOB' |
 | prop_build | yes | 'config.RUN_IF_FAIL' |
 
