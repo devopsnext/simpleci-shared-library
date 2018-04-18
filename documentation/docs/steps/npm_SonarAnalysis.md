@@ -30,6 +30,6 @@ None
 ## Example
 
 ```groovy
-# npm_SonarAnalysis
+npm_SonarAnalysis
 
 ```
