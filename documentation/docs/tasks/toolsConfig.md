@@ -9,7 +9,7 @@ none
 ## Parameters
 
 | parameter | mandatory | derived from |
-| ----------|-----------|---------|-----------------|
+| ----------|-----------|--------------|
 | java_home | yes | 'config.JAVA_HOME' |
 | maven_home | yes | 'config.MAVEN_HOME'|
 | npm_scope | yes | 'config.NPM_SCOPE' |
