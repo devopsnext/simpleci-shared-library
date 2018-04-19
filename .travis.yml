@@ -3,17 +3,5 @@ sudo: false
 install:
 - pip install --user mkdocs mkdocs-material
 script:
-
-- |
-  if [[ "${TRAVIS_PULL_REQUEST}" != "false" ]]
-  then
-    cd documentation && mkdocs build --clean --verbose --strict && cd ..
-  else
-    if [[ "${TRAVIS_BRANCH}" == "master" && "${TRAVIS_REPO_SLUG}" == "devopsnext/simpleci-shared-library" ]]
-    then
-       openssl aes-256-cbc -K $encrypted_12c8071d2874_key -iv $encrypted_12c8071d2874_iv -in cfg/id_rsa.enc -out cfg/id_rsa -d
-      ./gh-pages-deploy.sh
-    else
-       echo "Publishing documentation skipped."
-    fi
-  fi
+-  sh gh-pages-deploy.sh
+    
