@@ -1,1 +1,0 @@
-# simpleci-shared-library
