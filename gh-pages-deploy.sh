@@ -2,7 +2,7 @@
 
 echo "Found change on master: Deployment of documentation"
 
-PRIVATE_KEY="cfg/id_rsa"
+PRIVATE_KEY="id_rsa"
 
 chmod 600 "${PRIVATE_KEY}"
 eval `ssh-agent -s`
