@@ -1,0 +1,48 @@
+site_name: SimpleCI Shared Library
+pages:
+    - Home: index.md
+    - 'Reusable tasks':
+        - GIT: steps/Git.md
+        - AEM Deploy: steps/aem_Deploy.md
+        - Build ENV Variables: steps/buildEnvVariables.md
+        - Build Trigger: steps/buildTrigger.md
+        - Cleanup: steps/cleanup.md
+        - Job Property: steps/jobProperty.md
+        - Maven Build: steps/maven_Build.md
+        - Maven Publish: steps/maven_Publish.md
+        - Maven Test: steps/maven_Test.md
+        - Maven Sonar Analysis: steps/maven_SonarAnalysis.md
+        - Notify: steps/notify.md
+        - NPM Build: steps/npm_Build.md
+        - NPM Publish: steps/npm_Publish.md
+        - NPM Test: steps/npm_Test.md
+        - NPM Sonar Analysis: steps/npm_SonarAnalysis.md
+        - Prepare Archieve: steps/prepare_Archive.md
+        - Remote Deploy: steps/remote_Deploy.md
+        - Remote Execute: steps/remote_Execute.md
+        - Tools Config: steps/toolsConfig.md
+    - 'Required Plugins': jenkins/requiredPlugins.md
+
+theme:
+    name: 'material'
+    palette:
+      primary: 'teal'
+      accent: 'purple'
+    logo: 'images/piper_head_white.png'
+    favicon: 'images/favicon.ico'
+extra:
+    font:
+      text: 'Slabo 13px'
+      code: 'Ubuntu Mono'
+markdown_extensions:
+    - admonition
+    - codehilite(guess_lang=false)
+    - toc(permalink=true)
+    - footnotes
+    - pymdownx.superfences
+extra_css:
+    - 'css/extra.css'
+edit_uri: edit/master/documentation/docs
+docs_dir: docs
+site_dir: docs-gen
+repo_url: https://github.com/devopsnext/simpleci-shared-library
