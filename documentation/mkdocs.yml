@@ -26,9 +26,9 @@ pages:
 theme:
     name: 'material'
     palette:
-      primary: 'teal'
-      accent: 'purple'
-    logo: 'images/piper_head_white.png'
+      primary: 'blue grey'
+      accent: 'deep purple'
+    logo: 'images/doc-icon.png'
     favicon: 'images/favicon.ico'
 extra:
     font:
