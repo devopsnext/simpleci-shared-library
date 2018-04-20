@@ -1,0 +1,784 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Project \"SimpleCI\" - extended library documentation\n\n\nOn the following pages, you can find documentation for all steps and scripts\ncontained in the library of project \"SimpleCI\".\n\n\nWe have also compiled a list of plugins that are required for the library to\nwork.\n\n\nFor information on the project and installation of the library, please have a\nlook at our \nREADME.md\n.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#project-simpleci-extended-library-documentation", 
+            "text": "On the following pages, you can find documentation for all steps and scripts\ncontained in the library of project \"SimpleCI\".  We have also compiled a list of plugins that are required for the library to\nwork.  For information on the project and installation of the library, please have a\nlook at our  README.md .", 
+            "title": "Project \"SimpleCI\" - extended library documentation"
+        }, 
+        {
+            "location": "/steps/Git/", 
+            "text": "Git\n\n\nDescription\n\n\nThis is a reusable task to perform the GIT cloning operation.\n\n\nThe global variable scm is used to get the branch name and the repository details. The details for checkout or cloning are also fetched from enviornment variables 'env' if not found in global configurations. The GIT variables are generated i.e. the GIT hash, the commit id and code is cloned.\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nbranch\n\n\nyes\n\n\nenv var/ scm\n\n\n\n\n\n\nrepository\n\n\nyes\n\n\nscm\n\n\n\n\n\n\n\n\n\n\nscm\n defines the Source Control Management, preferably GIT \n\n\nbranch\n defines the Git branch name\n\n\nrepository\n defines the Git repository name\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be derived from environment variables:\n\n\n\n\nbranch\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nGit", 
+            "title": "GIT"
+        }, 
+        {
+            "location": "/steps/Git/#git", 
+            "text": "", 
+            "title": "Git"
+        }, 
+        {
+            "location": "/steps/Git/#description", 
+            "text": "This is a reusable task to perform the GIT cloning operation.  The global variable scm is used to get the branch name and the repository details. The details for checkout or cloning are also fetched from enviornment variables 'env' if not found in global configurations. The GIT variables are generated i.e. the GIT hash, the commit id and code is cloned.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/Git/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/Git/#parameters", 
+            "text": "parameter  mandatory  derived from      branch  yes  env var/ scm    repository  yes  scm      scm  defines the Source Control Management, preferably GIT   branch  defines the Git branch name  repository  defines the Git repository name", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/Git/#configuration", 
+            "text": "The following parameters can also be derived from environment variables:   branch", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/Git/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/Git/#example", 
+            "text": "Git", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/aem_Deploy/", 
+            "text": "aem_Deploy\n\n\nDescription\n\n\nThis is the task that is used to deploy snapshot artifact or release artifact to the AEM server. The server configurations i.e. the port, the credentails for authentication and what server the deployment happens on. \n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nauthor_ip\n\n\nyes\n\n\n\n\n\n\n\n\npublish_ip\n\n\nyes\n\n\n\n\n\n\n\n\nartifact_name\n\n\nyes\n\n\n\n\n\n\n\n\nartifact_version\n\n\nyes\n\n\n\n\n\n\n\n\nusername\n\n\nyes\n\n\n\n\n\n\n\n\npassword\n\n\nyes\n\n\n\n\n\n\n\n\n\n\n\n\nauthor_ip\n defines the Author instance that is used to design, create and review the content which will be published on the application in the future. The default port used by the instance is 4502.\n\n\npublish_ip\n defines the Publish instance that is used to make the designed application available to the public and is located in a demilitarized zone. The default port used by the instance is 4503.\n\n\nartifact_name\n defines the name the artifact.\n\n\nartifact_version\n defines the version number of the artifact.\n\n\nusername\n specifies the server username.\n\n\npassword\n defines the server password in encryted form.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nauthor_ip\n\n\npublish_ip\n\n\nartifact_name\n\n\nartifact_version\n\n\nusername\n\n\npassword\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\naem_Deploy", 
+            "title": "AEM Deploy"
+        }, 
+        {
+            "location": "/steps/aem_Deploy/#aem_deploy", 
+            "text": "", 
+            "title": "aem_Deploy"
+        }, 
+        {
+            "location": "/steps/aem_Deploy/#description", 
+            "text": "This is the task that is used to deploy snapshot artifact or release artifact to the AEM server. The server configurations i.e. the port, the credentails for authentication and what server the deployment happens on.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/aem_Deploy/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/aem_Deploy/#parameters", 
+            "text": "parameter  mandatory  derived from      author_ip  yes     publish_ip  yes     artifact_name  yes     artifact_version  yes     username  yes     password  yes       author_ip  defines the Author instance that is used to design, create and review the content which will be published on the application in the future. The default port used by the instance is 4502.  publish_ip  defines the Publish instance that is used to make the designed application available to the public and is located in a demilitarized zone. The default port used by the instance is 4503.  artifact_name  defines the name the artifact.  artifact_version  defines the version number of the artifact.  username  specifies the server username.  password  defines the server password in encryted form.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/aem_Deploy/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   author_ip  publish_ip  artifact_name  artifact_version  username  password", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/aem_Deploy/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/aem_Deploy/#example", 
+            "text": "aem_Deploy", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/buildEnvVariables/", 
+            "text": "buildEnvVariables\n\n\nDescription\n\n\nThis step is used to read the enviornment variables and print them.\n\n\nPrerequsites\n\n\nNone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\ndefault\n\n\npossible values\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfiguration\n\n\nNone\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nbuildEnvVariables", 
+            "title": "Build ENV Variables"
+        }, 
+        {
+            "location": "/steps/buildEnvVariables/#buildenvvariables", 
+            "text": "", 
+            "title": "buildEnvVariables"
+        }, 
+        {
+            "location": "/steps/buildEnvVariables/#description", 
+            "text": "This step is used to read the enviornment variables and print them.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/buildEnvVariables/#prerequsites", 
+            "text": "None", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/buildEnvVariables/#parameters", 
+            "text": "parameter  mandatory  default  possible values", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/buildEnvVariables/#configuration", 
+            "text": "None", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/buildEnvVariables/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/buildEnvVariables/#example", 
+            "text": "buildEnvVariables", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/buildTrigger/", 
+            "text": "buildTrigger\n\n\nDescription\n\n\nThis step is used to trigger build using job id and build property. \n\n\nPrerequsites\n\n\nNone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\njob\n\n\nyes\n\n\n'config.BUILD_JOB'\n\n\n\n\n\n\nprop_build\n\n\nyes\n\n\n'config.RUN_IF_FAIL'\n\n\n\n\n\n\n\n\n\n\njob\n defines the name of the Job\n\n\nprop_build\n defines where the propogation property is set to true of false. If set to false will ensure your workflow will continue if particular job fails\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\njob\n\n\nprop_build\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nbuildTrigger", 
+            "title": "Build Trigger"
+        }, 
+        {
+            "location": "/steps/buildTrigger/#buildtrigger", 
+            "text": "", 
+            "title": "buildTrigger"
+        }, 
+        {
+            "location": "/steps/buildTrigger/#description", 
+            "text": "This step is used to trigger build using job id and build property.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/buildTrigger/#prerequsites", 
+            "text": "None", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/buildTrigger/#parameters", 
+            "text": "parameter  mandatory  derived from      job  yes  'config.BUILD_JOB'    prop_build  yes  'config.RUN_IF_FAIL'      job  defines the name of the Job  prop_build  defines where the propogation property is set to true of false. If set to false will ensure your workflow will continue if particular job fails", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/buildTrigger/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   job  prop_build", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/buildTrigger/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/buildTrigger/#example", 
+            "text": "buildTrigger", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/cleanup/", 
+            "text": "cleanup\n\n\nDescription\n\n\nThis step is used to Delete workspace when build is done\n\n\nPrerequsites\n\n\nNone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfiguration\n\n\nNone\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\ncleanup", 
+            "title": "Cleanup"
+        }, 
+        {
+            "location": "/steps/cleanup/#cleanup", 
+            "text": "", 
+            "title": "cleanup"
+        }, 
+        {
+            "location": "/steps/cleanup/#description", 
+            "text": "This step is used to Delete workspace when build is done", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/cleanup/#prerequsites", 
+            "text": "None", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/cleanup/#parameters", 
+            "text": "parameter  mandatory  derived from", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/cleanup/#configuration", 
+            "text": "None", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/cleanup/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/cleanup/#example", 
+            "text": "cleanup", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/jobProperty/", 
+            "text": "jobProperty\n\n\nDescription\n\n\nThis task is used to determine the current job as Upstream or downstream.\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nupstream_jobs\n\n\nno\n\n\n'config.UPSTREAM_JOBS'\n\n\n\n\n\n\n\n\n\n\nupstream_jobs\n defines as a configured project that triggers a project as of its execution.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nupstream_jobs\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\njobProperty", 
+            "title": "Job Property"
+        }, 
+        {
+            "location": "/steps/jobProperty/#jobproperty", 
+            "text": "", 
+            "title": "jobProperty"
+        }, 
+        {
+            "location": "/steps/jobProperty/#description", 
+            "text": "This task is used to determine the current job as Upstream or downstream.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/jobProperty/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/jobProperty/#parameters", 
+            "text": "parameter  mandatory  derived from      upstream_jobs  no  'config.UPSTREAM_JOBS'      upstream_jobs  defines as a configured project that triggers a project as of its execution.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/jobProperty/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   upstream_jobs", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/jobProperty/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/jobProperty/#example", 
+            "text": "jobProperty", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/maven_Build/", 
+            "text": "maven_Build\n\n\nDescription\n\n\nMaven projects require a configuration file pom.xml for downloading the dependencies and project configurations. Maven goal is to build the project and create a archieve file. This task is used to perform the operation of Maven build using the goal and pom.xml\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nmaven_goals\n\n\nno\n\n\n'config.MAVEN_GOALS'\n\n\n\n\n\n\nmaven_root_pom\n\n\nno\n\n\n'config.MAVEN_ROOT_POM'\n\n\n\n\n\n\n\n\n\n\nmaven_goals\n defines the maven goal, here is it clean install\n\n\nmaven_root_pom\n defines the pom.xml for the module.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nmaven_goals\n\n\nmaven_root_pom\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nmaven_Build", 
+            "title": "Maven Build"
+        }, 
+        {
+            "location": "/steps/maven_Build/#maven_build", 
+            "text": "", 
+            "title": "maven_Build"
+        }, 
+        {
+            "location": "/steps/maven_Build/#description", 
+            "text": "Maven projects require a configuration file pom.xml for downloading the dependencies and project configurations. Maven goal is to build the project and create a archieve file. This task is used to perform the operation of Maven build using the goal and pom.xml", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/maven_Build/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/maven_Build/#parameters", 
+            "text": "parameter  mandatory  derived from      maven_goals  no  'config.MAVEN_GOALS'    maven_root_pom  no  'config.MAVEN_ROOT_POM'      maven_goals  defines the maven goal, here is it clean install  maven_root_pom  defines the pom.xml for the module.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/maven_Build/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   maven_goals  maven_root_pom", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/maven_Build/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/maven_Build/#example", 
+            "text": "maven_Build", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/maven_Publish/", 
+            "text": "maven_Publish\n\n\nDescription\n\n\nMaven projects require a configuration file pom.xml for downloading the dependencies and project configurations. Maven goal is to clean and deploy the project on the server. This task is used to perform the operation of maven deploy using the goal and pom.xml\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nmaven_root_pom\n\n\nyes\n\n\n'config.MAVEN_ROOT_POM'\n\n\n\n\n\n\n\n\n\n\nmaven_root_pom\n defines the pom.xml for the module.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nmaven_root_pom\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nmaven_Publish", 
+            "title": "Maven Publish"
+        }, 
+        {
+            "location": "/steps/maven_Publish/#maven_publish", 
+            "text": "", 
+            "title": "maven_Publish"
+        }, 
+        {
+            "location": "/steps/maven_Publish/#description", 
+            "text": "Maven projects require a configuration file pom.xml for downloading the dependencies and project configurations. Maven goal is to clean and deploy the project on the server. This task is used to perform the operation of maven deploy using the goal and pom.xml", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/maven_Publish/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/maven_Publish/#parameters", 
+            "text": "parameter  mandatory  derived from      maven_root_pom  yes  'config.MAVEN_ROOT_POM'      maven_root_pom  defines the pom.xml for the module.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/maven_Publish/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   maven_root_pom", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/maven_Publish/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/maven_Publish/#example", 
+            "text": "maven_Publish", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/maven_Test/", 
+            "text": "maven_Test\n\n\nDescription\n\n\nMaven projects require a configuration file pom.xml for downloading the dependencies and project configurations. Maven goal is to unit test the project. This task is used to perform the operation of Maven clean test junits using the goal and pom.xml\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nmaven_root_pom\n\n\nno\n\n\n'config.MAVEN_ROOT_POM'\n\n\n\n\n\n\n\n\n\n\nmaven_root_pom\n defines the pom.xml for the project module.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nmaven_root_pom\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nmaven_Test", 
+            "title": "Maven Test"
+        }, 
+        {
+            "location": "/steps/maven_Test/#maven_test", 
+            "text": "", 
+            "title": "maven_Test"
+        }, 
+        {
+            "location": "/steps/maven_Test/#description", 
+            "text": "Maven projects require a configuration file pom.xml for downloading the dependencies and project configurations. Maven goal is to unit test the project. This task is used to perform the operation of Maven clean test junits using the goal and pom.xml", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/maven_Test/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/maven_Test/#parameters", 
+            "text": "parameter  mandatory  derived from      maven_root_pom  no  'config.MAVEN_ROOT_POM'      maven_root_pom  defines the pom.xml for the project module.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/maven_Test/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   maven_root_pom", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/maven_Test/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/maven_Test/#example", 
+            "text": "maven_Test", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/maven_SonarAnalysis/", 
+            "text": "maven_SonarAnalysis\n\n\nDescription\n\n\nThis task is used to perform SONAR analysis and publish to DOJO-SONAR. Also in parellel waits for SonarQube analysis to be completed and return quality gate status.\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nmaven_root_pom\n\n\nno\n\n\n'config.MAVEN_ROOT_POM'\n\n\n\n\n\n\nsonar_token\n\n\nyes\n\n\n'config.SONAR_TOKEN'\n\n\n\n\n\n\n\n\n\n\nmaven_root_pom\n defines the pom.xml for the module.\n\n\nsonar_token\n defines the sonar token.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nmaven_root_pom\n\n\nsonar_token\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nmaven_SonarAnalysis", 
+            "title": "Maven Sonar Analysis"
+        }, 
+        {
+            "location": "/steps/maven_SonarAnalysis/#maven_sonaranalysis", 
+            "text": "", 
+            "title": "maven_SonarAnalysis"
+        }, 
+        {
+            "location": "/steps/maven_SonarAnalysis/#description", 
+            "text": "This task is used to perform SONAR analysis and publish to DOJO-SONAR. Also in parellel waits for SonarQube analysis to be completed and return quality gate status.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/maven_SonarAnalysis/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/maven_SonarAnalysis/#parameters", 
+            "text": "parameter  mandatory  derived from      maven_root_pom  no  'config.MAVEN_ROOT_POM'    sonar_token  yes  'config.SONAR_TOKEN'      maven_root_pom  defines the pom.xml for the module.  sonar_token  defines the sonar token.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/maven_SonarAnalysis/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   maven_root_pom  sonar_token", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/maven_SonarAnalysis/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/maven_SonarAnalysis/#example", 
+            "text": "maven_SonarAnalysis", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/notify/", 
+            "text": "notify\n\n\nDescription\n\n\nThis purpose of this task is to send notification to the user on build initiation,  status completion or failure.\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nto\n\n\nyes\n\n\n'config.TO'\n\n\n\n\n\n\n\n\n\n\nto\n defines the email address where the mail needs to be sent.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nto\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nnotify", 
+            "title": "Notify"
+        }, 
+        {
+            "location": "/steps/notify/#notify", 
+            "text": "", 
+            "title": "notify"
+        }, 
+        {
+            "location": "/steps/notify/#description", 
+            "text": "This purpose of this task is to send notification to the user on build initiation,  status completion or failure.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/notify/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/notify/#parameters", 
+            "text": "parameter  mandatory  derived from      to  yes  'config.TO'      to  defines the email address where the mail needs to be sent.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/notify/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   to", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/notify/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/notify/#example", 
+            "text": "notify", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/npm_Build/", 
+            "text": "npm_Build\n\n\nDescription\n\n\nThis task is used to build and run npm modules based on the input command.\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nnpm_run\n\n\nno\n\n\n'config.NPM_RUN'\n\n\n\n\n\n\n\n\n\n\nnpm_run\n defines the command for the npm module to execute.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nnpm_run\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nnpm_Build", 
+            "title": "NPM Build"
+        }, 
+        {
+            "location": "/steps/npm_Build/#npm_build", 
+            "text": "", 
+            "title": "npm_Build"
+        }, 
+        {
+            "location": "/steps/npm_Build/#description", 
+            "text": "This task is used to build and run npm modules based on the input command.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/npm_Build/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/npm_Build/#parameters", 
+            "text": "parameter  mandatory  derived from      npm_run  no  'config.NPM_RUN'      npm_run  defines the command for the npm module to execute.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/npm_Build/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   npm_run", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/npm_Build/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/npm_Build/#example", 
+            "text": "npm_Build", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/npm_Publish/", 
+            "text": "npm_Publish\n\n\nDescription\n\n\nThis task is used to upload/publish npm modules based on the input command.If you then want to publish a package for the whole world to see, you can simply override the --registry option for that publish command.\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nnpm_publish\n\n\nyes\n\n\n'config.NPM_PUBLISH'\n\n\n\n\n\n\nnpm_repo\n\n\nyes\n\n\n'config.NPM_REPO'\n\n\n\n\n\n\n\n\n\n\nnpm_publish\n defines the publish artifacts. \n\n\nnpm_repo\n defines the name of the repo to be published or uploaded.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nnpm_publish\n\n\nnpm_repo\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nnpm_Publish", 
+            "title": "NPM Publish"
+        }, 
+        {
+            "location": "/steps/npm_Publish/#npm_publish", 
+            "text": "", 
+            "title": "npm_Publish"
+        }, 
+        {
+            "location": "/steps/npm_Publish/#description", 
+            "text": "This task is used to upload/publish npm modules based on the input command.If you then want to publish a package for the whole world to see, you can simply override the --registry option for that publish command.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/npm_Publish/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/npm_Publish/#parameters", 
+            "text": "parameter  mandatory  derived from      npm_publish  yes  'config.NPM_PUBLISH'    npm_repo  yes  'config.NPM_REPO'      npm_publish  defines the publish artifacts.   npm_repo  defines the name of the repo to be published or uploaded.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/npm_Publish/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   npm_publish  npm_repo", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/npm_Publish/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/npm_Publish/#example", 
+            "text": "npm_Publish", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/npm_Test/", 
+            "text": "npm_Test\n\n\nDescription\n\n\nThis task is used to clean and test the npm modules based on the input command.\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nnpm_run\n\n\nno\n\n\n'config.NPM_RUN'\n\n\n\n\n\n\n\n\n\n\nnpm_run\n defines the command to test the npm module.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nnpm_run\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nnpm_Test", 
+            "title": "NPM Test"
+        }, 
+        {
+            "location": "/steps/npm_Test/#npm_test", 
+            "text": "", 
+            "title": "npm_Test"
+        }, 
+        {
+            "location": "/steps/npm_Test/#description", 
+            "text": "This task is used to clean and test the npm modules based on the input command.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/npm_Test/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/npm_Test/#parameters", 
+            "text": "parameter  mandatory  derived from      npm_run  no  'config.NPM_RUN'      npm_run  defines the command to test the npm module.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/npm_Test/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   npm_run", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/npm_Test/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/npm_Test/#example", 
+            "text": "npm_Test", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/npm_SonarAnalysis/", 
+            "text": "npm_SonarAnalysis\n\n\nDescription\n\n\nThis task is used to perform SONAR analysis and publish to DOJO-SONAR. Also in parellel waits for SonarQube analysis to be completed and return quality gate status.\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nsonar_property\n\n\nyes\n\n\n'config.SONAR_PROPERTY'\n\n\n\n\n\n\n\n\n\n\nsonar_property\n defines the properties of sonar for analysis in the form of properties file.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nsonar_property\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nnpm_SonarAnalysis", 
+            "title": "NPM Sonar Analysis"
+        }, 
+        {
+            "location": "/steps/npm_SonarAnalysis/#npm_sonaranalysis", 
+            "text": "", 
+            "title": "npm_SonarAnalysis"
+        }, 
+        {
+            "location": "/steps/npm_SonarAnalysis/#description", 
+            "text": "This task is used to perform SONAR analysis and publish to DOJO-SONAR. Also in parellel waits for SonarQube analysis to be completed and return quality gate status.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/npm_SonarAnalysis/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/npm_SonarAnalysis/#parameters", 
+            "text": "parameter  mandatory  derived from      sonar_property  yes  'config.SONAR_PROPERTY'      sonar_property  defines the properties of sonar for analysis in the form of properties file.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/npm_SonarAnalysis/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   sonar_property", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/npm_SonarAnalysis/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/npm_SonarAnalysis/#example", 
+            "text": "npm_SonarAnalysis", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/prepare_Archive/", 
+            "text": "prepare_Archive\n\n\nDescription\n\n\nThis task is used to package/archieve the artifact in the zip format\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nartifact\n\n\nyes\n\n\n'config.ARTIFACT'\n\n\n\n\n\n\nexclude\n\n\nno\n\n\n'config.EXCLUDE'\n\n\n\n\n\n\n\n\n\n\nartifact\n defines the artifact name that needs to be zipped.\n\n\nexclude\n defines the exclude file or formats if any in the zip file.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nartifact\n\n\nexclude\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nprepare_Archive", 
+            "title": "Prepare Archieve"
+        }, 
+        {
+            "location": "/steps/prepare_Archive/#prepare_archive", 
+            "text": "", 
+            "title": "prepare_Archive"
+        }, 
+        {
+            "location": "/steps/prepare_Archive/#description", 
+            "text": "This task is used to package/archieve the artifact in the zip format", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/prepare_Archive/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/prepare_Archive/#parameters", 
+            "text": "parameter  mandatory  derived from      artifact  yes  'config.ARTIFACT'    exclude  no  'config.EXCLUDE'      artifact  defines the artifact name that needs to be zipped.  exclude  defines the exclude file or formats if any in the zip file.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/prepare_Archive/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   artifact  exclude", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/prepare_Archive/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/prepare_Archive/#example", 
+            "text": "prepare_Archive", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/remote_Deploy/", 
+            "text": "remote_Deploy\n\n\nDescription\n\n\nThis step is used to copy the artifacts to remote server, validate and run them\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nremote_user\n\n\nyes\n\n\n'config.REMOTE_USER'\n\n\n\n\n\n\nremote_ip\n\n\nyes\n\n\n'config.REMOTE_IP'\n\n\n\n\n\n\ndeploy_path\n\n\nyes\n\n\n'config.DEPLOY_PATH'\n\n\n\n\n\n\nscript\n\n\nyes\n\n\n'config.SCRIPT'\n\n\n\n\n\n\n\n\n\n\nremote_user\n defines the remote server username.\n\n\nremote_ip\n defines the remote server IP address.\n\n\ndeploy_path\n defines the path to deploy the script on server.\n\n\nscript\n defines the script needed to be deployed on server.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nremote_user\n\n\nremote_ip\n\n\ndeploy_path\n\n\nscript\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nremote_Deploy", 
+            "title": "Remote Deploy"
+        }, 
+        {
+            "location": "/steps/remote_Deploy/#remote_deploy", 
+            "text": "", 
+            "title": "remote_Deploy"
+        }, 
+        {
+            "location": "/steps/remote_Deploy/#description", 
+            "text": "This step is used to copy the artifacts to remote server, validate and run them", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/remote_Deploy/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/remote_Deploy/#parameters", 
+            "text": "parameter  mandatory  derived from      remote_user  yes  'config.REMOTE_USER'    remote_ip  yes  'config.REMOTE_IP'    deploy_path  yes  'config.DEPLOY_PATH'    script  yes  'config.SCRIPT'      remote_user  defines the remote server username.  remote_ip  defines the remote server IP address.  deploy_path  defines the path to deploy the script on server.  script  defines the script needed to be deployed on server.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/remote_Deploy/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   remote_user  remote_ip  deploy_path  script", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/remote_Deploy/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/remote_Deploy/#example", 
+            "text": "remote_Deploy", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/remote_Execute/", 
+            "text": "remote_Execute\n\n\nDescription\n\n\nThis step is used to validate the artifacts on remote machine and run them\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\nremote_user\n\n\nyes\n\n\n'config.REMOTE_USER'\n\n\n\n\n\n\nremote_ip\n\n\nyes\n\n\n'config.REMOTE_IP'\n\n\n\n\n\n\ndeploy_path\n\n\nyes\n\n\n'config.DEPLOY_PATH'\n\n\n\n\n\n\nscript\n\n\nyes\n\n\n'config.SCRIPT'\n\n\n\n\n\n\n\n\n\n\nremote_user\n defines the remote server username.\n\n\nremote_ip\n defines the remote server IP address.\n\n\ndeploy_path\n defines the path to deploy the script on server.\n\n\nscript\n defines the script needed to be deployed on server.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\nremote_user\n\n\nremote_ip\n\n\ndeploy_path\n\n\nscript\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\nremote_Execute", 
+            "title": "Remote Execute"
+        }, 
+        {
+            "location": "/steps/remote_Execute/#remote_execute", 
+            "text": "", 
+            "title": "remote_Execute"
+        }, 
+        {
+            "location": "/steps/remote_Execute/#description", 
+            "text": "This step is used to validate the artifacts on remote machine and run them", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/remote_Execute/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/remote_Execute/#parameters", 
+            "text": "parameter  mandatory  derived from      remote_user  yes  'config.REMOTE_USER'    remote_ip  yes  'config.REMOTE_IP'    deploy_path  yes  'config.DEPLOY_PATH'    script  yes  'config.SCRIPT'      remote_user  defines the remote server username.  remote_ip  defines the remote server IP address.  deploy_path  defines the path to deploy the script on server.  script  defines the script needed to be deployed on server.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/remote_Execute/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   remote_user  remote_ip  deploy_path  script", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/remote_Execute/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/remote_Execute/#example", 
+            "text": "remote_Execute", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/steps/toolsConfig/", 
+            "text": "toolsConfig\n\n\nDescription\n\n\nThis step is used to set the PATH variables, JAVA_HOME, MAVEN-HOME\n\n\nPrerequsites\n\n\nnone\n\n\nParameters\n\n\n\n\n\n\n\n\nparameter\n\n\nmandatory\n\n\nderived from\n\n\n\n\n\n\n\n\n\n\njava_home\n\n\nyes\n\n\n'config.JAVA_HOME'\n\n\n\n\n\n\nmaven_home\n\n\nyes\n\n\n'config.MAVEN_HOME'\n\n\n\n\n\n\nnpm_scope\n\n\nyes\n\n\n'config.NPM_SCOPE'\n\n\n\n\n\n\n\n\n\n\njava_home\n defines the path of java sdk.\n\n\nmaven_home\n defines the path of maven.\n\n\nnpm_scope\n defines the npm scope.\n\n\n\n\nConfiguration\n\n\nThe following parameters can also be specified as input parameters using the global configuration file:\n\n\n\n\njava_home\n\n\nmaven_home\n\n\nnpm_scope\n\n\n\n\nExceptions\n\n\nNone\n\n\nExample\n\n\ntoolsConfig", 
+            "title": "Tools Config"
+        }, 
+        {
+            "location": "/steps/toolsConfig/#toolsconfig", 
+            "text": "", 
+            "title": "toolsConfig"
+        }, 
+        {
+            "location": "/steps/toolsConfig/#description", 
+            "text": "This step is used to set the PATH variables, JAVA_HOME, MAVEN-HOME", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/steps/toolsConfig/#prerequsites", 
+            "text": "none", 
+            "title": "Prerequsites"
+        }, 
+        {
+            "location": "/steps/toolsConfig/#parameters", 
+            "text": "parameter  mandatory  derived from      java_home  yes  'config.JAVA_HOME'    maven_home  yes  'config.MAVEN_HOME'    npm_scope  yes  'config.NPM_SCOPE'      java_home  defines the path of java sdk.  maven_home  defines the path of maven.  npm_scope  defines the npm scope.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/steps/toolsConfig/#configuration", 
+            "text": "The following parameters can also be specified as input parameters using the global configuration file:   java_home  maven_home  npm_scope", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/steps/toolsConfig/#exceptions", 
+            "text": "None", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/steps/toolsConfig/#example", 
+            "text": "toolsConfig", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/jenkins/requiredPlugins/", 
+            "text": "Required Plugins\n\n\nThe following Jenkins plugins are needed in order to use the SimpleCI shared library.\nThe list below contains the plugin Id and version of the plugin.\n\n\nPlugins\n\n\n\n\nace-editor 1.1\n\n\nauthentication-tokens 1.3\n\n\nbouncycastle-api 2.16.2\n\n\nbranch-api 2.0.14\n\n\ncloudbees-folder 6.2.1\n\n\ncredentials 2.1.16\n\n\ncredentials-binding 1.13\n\n\ndisplay-url-api 2.1.0\n\n\ndocker-commons 1.9\n\n\ndocker-workflow 1.10\n\n\ndurable-task 1.15\n\n\ngit 3.6.2\n\n\ngit-client 2.5.0\n\n\ngit-server 1.7\n\n\nhandlebars 1.1.1\n\n\nicon-shim 2.0.3\n\n\njquery-detached 1.2.1\n\n\njunit 1.21\n\n\nmailer 1.20\n\n\nmatrix-project 1.12\n\n\nmomentjs 1.1.1\n\n\npipeline-build-step 2.5.1\n\n\npipeline-graph-analysis 1.3\n\n\npipeline-input-step 2.8\n\n\npipeline-milestone-step 1.3.1\n\n\npipeline-model-api 1.2.2\n\n\npipeline-model-definition 1.1.1\n\n\npipeline-model-extensions 1.1.1\n\n\npipeline-rest-api 2.6\n\n\npipeline-stage-step 2.2\n\n\npipeline-stage-tags-metadata 1.2.2\n\n\npipeline-stage-view 2.6\n\n\npipeline-utility-steps 1.3.0\n\n\nplain-credentials 1.4\n\n\nscm-api 2.2.3\n\n\nscript-security 1.34\n\n\nssh-credentials 1.13\n\n\nstructs 1.10\n\n\nworkflow-aggregator 2.5\n\n\nworkflow-api 2.23.1\n\n\nworkflow-basic-steps 2.6\n\n\nworkflow-cps 2.41\n\n\nworkflow-cps-global-lib 2.7\n\n\nworkflow-durable-task-step 2.17\n\n\nworkflow-job 2.12.2\n\n\nworkflow-multibranch 2.14\n\n\nworkflow-scm-step 2.6\n\n\nworkflow-step-api 2.13\n\n\nworkflow-support 2.16", 
+            "title": "Required Plugins"
+        }, 
+        {
+            "location": "/jenkins/requiredPlugins/#required-plugins", 
+            "text": "The following Jenkins plugins are needed in order to use the SimpleCI shared library.\nThe list below contains the plugin Id and version of the plugin.  Plugins   ace-editor 1.1  authentication-tokens 1.3  bouncycastle-api 2.16.2  branch-api 2.0.14  cloudbees-folder 6.2.1  credentials 2.1.16  credentials-binding 1.13  display-url-api 2.1.0  docker-commons 1.9  docker-workflow 1.10  durable-task 1.15  git 3.6.2  git-client 2.5.0  git-server 1.7  handlebars 1.1.1  icon-shim 2.0.3  jquery-detached 1.2.1  junit 1.21  mailer 1.20  matrix-project 1.12  momentjs 1.1.1  pipeline-build-step 2.5.1  pipeline-graph-analysis 1.3  pipeline-input-step 2.8  pipeline-milestone-step 1.3.1  pipeline-model-api 1.2.2  pipeline-model-definition 1.1.1  pipeline-model-extensions 1.1.1  pipeline-rest-api 2.6  pipeline-stage-step 2.2  pipeline-stage-tags-metadata 1.2.2  pipeline-stage-view 2.6  pipeline-utility-steps 1.3.0  plain-credentials 1.4  scm-api 2.2.3  script-security 1.34  ssh-credentials 1.13  structs 1.10  workflow-aggregator 2.5  workflow-api 2.23.1  workflow-basic-steps 2.6  workflow-cps 2.41  workflow-cps-global-lib 2.7  workflow-durable-task-step 2.17  workflow-job 2.12.2  workflow-multibranch 2.14  workflow-scm-step 2.6  workflow-step-api 2.13  workflow-support 2.16", 
+            "title": "Required Plugins"
+        }
+    ]
+}

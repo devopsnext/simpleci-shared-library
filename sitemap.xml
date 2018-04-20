@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/steps/Git/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/aem_Deploy/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/buildEnvVariables/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/buildTrigger/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/cleanup/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/jobProperty/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/maven_Build/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/maven_Publish/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/maven_Test/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/maven_SonarAnalysis/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/notify/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/npm_Build/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/npm_Publish/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/npm_Test/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/npm_SonarAnalysis/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/prepare_Archive/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/remote_Deploy/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/remote_Execute/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/steps/toolsConfig/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>/jenkins/requiredPlugins/</loc>
+     <lastmod>2018-04-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>
