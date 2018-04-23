@@ -1,6 +1,6 @@
 #!groovy
 import com.devopsnext.devops.scm.git
-import com.devopsnext.devops.email.gitEmail
+import com.devopsnext.devops.email.gitNotification
 
 def call(body) 
 {
@@ -31,8 +31,8 @@ def call(body)
       Regards,
       AAA"""
 
-      def gitMail = new gitEmail()
-      gitMail.gitSendmail("$TO","$FROM","$SUBJECT","$BODY")
+      def gitMail = new gitNotification()
+      gitMail.gitSendEmail("$TO","$FROM","$SUBJECT","$BODY")
    }
 }
 

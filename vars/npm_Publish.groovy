@@ -1,5 +1,5 @@
 #!groovy
-import com.devopsnext.devops.npm.publish
+import com.devopsnext.devops.npm.npmOperations
 
 def call(body) {
   def config = [:]
@@ -8,8 +8,8 @@ def call(body) {
   body()
 
   try {
-      def npm_publish = new publish()
-      npm_publish.setValue("${config.NPM_PUBLISH}","${config.NPM_REPO}")
+      def npm_publish = new npmOperations()
+      npm_publish.setValues("${config.NPM_PUBLISH}","${config.NPM_REPO}")
 	  
 	  if ( "${config.NPM_PUBLISH}" != "null" ) {
 	    npm_publish.publishModule()

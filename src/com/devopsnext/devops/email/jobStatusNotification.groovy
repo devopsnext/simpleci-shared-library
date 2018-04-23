@@ -1,7 +1,7 @@
 #!groovy
 package com.devopsnext.devops.email
 
-def sendmail(String to)
+def sendEmail(String to)
 {
    try {
     String currentResult = 'SUCCESS'

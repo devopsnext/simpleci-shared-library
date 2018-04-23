@@ -1,5 +1,5 @@
 #!groovy
-import com.devopsnext.devops.email.sendmail
+import com.devopsnext.devops.email.jobStatusNotification
 
 def call(body) 
 {
@@ -9,8 +9,8 @@ def call(body)
    body()
    try {
       
-      def email = new sendmail()
-      email.sendmail("${config.TO}")
+      def email = new jobStatusNotification()
+      email.sendEmail("${config.TO}")
    }
    catch (Exception error)
    {

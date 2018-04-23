@@ -1,5 +1,5 @@
 #!groovy
-import com.devopsnext.devops.maven.build
+import com.devopsnext.devops.maven.mavenOperations
 
 def call(body) {
   def config = [:]
@@ -8,8 +8,8 @@ def call(body) {
   body()
 
   try {
-      def mvnBuild = new build()
-      mvnBuild.setValue("${config.MAVEN_GOALS}", "${config.MAVEN_ROOT_POM}")
+      def mvnBuild = new mavenOperations()
+      mvnBuild.setValues("${config.MAVEN_GOALS}", "${config.MAVEN_ROOT_POM}")
       mvnBuild.compile()
   }
   catch (Exception error)

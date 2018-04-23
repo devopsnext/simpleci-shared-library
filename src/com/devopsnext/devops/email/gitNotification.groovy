@@ -1,7 +1,7 @@
 #!groovy
 package com.devopsnext.devops.email
 
-def gitSendmail(String to, String from, String subject, String body)
+def gitSendEmail(String to, String from, String subject, String body)
 {
    try {
     String currentResult = 'SUCCESS'

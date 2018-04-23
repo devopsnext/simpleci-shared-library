@@ -1,5 +1,5 @@
 #!groovy
-import com.devopsnext.devops.maven.publish
+import com.devopsnext.devops.maven.mavenOperations
 
 def call(body) {
   def config = [:]
@@ -9,7 +9,7 @@ def call(body) {
 
   try {
     if ( "${env.GIT_BRANCH}" == "development" || "${env.GIT_BRANCH}" == "master" ) {
-	  def mvnPublish = new publish()
+	  def mvnPublish = new mavenOperations()
       mvnPublish.setValue("${config.MAVEN_ROOT_POM}")
       mvnPublish.uploadArtifacts()
 	}
