@@ -51,6 +51,9 @@ def sonar()
    }
 }
 
+/********************************************
+***** Function to run the sonar preview 
+*********************************************/
 def sonarPreview()
 {
    env.SONAR_RUNNER_HOME = tool name: 'sonar-scanner-2.8', type: 'hudson.plugins.sonar.SonarRunnerInstallation'

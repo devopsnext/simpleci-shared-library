@@ -1,5 +1,5 @@
 #!groovy
-import com.devopsnext.devops.npm.test
+import com.devopsnext.devops.npm.npmOperations
 
 def call(body) {
   def config = [:]
@@ -8,9 +8,9 @@ def call(body) {
   body()
 
   try {
-      def npmtest = new test()
-      npmtest.setValue("${config.NPM_RUN}")
-      npmtest.npmTest()
+      def npm_test = new npmOperations()
+      npm_test.setValue("${config.NPM_RUN}")
+      npm_test.npmTest()
   }
   catch (Exception error)
   {

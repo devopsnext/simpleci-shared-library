@@ -1,5 +1,5 @@
 #!groovy
-import com.devopsnext.devops.maven.test
+import com.devopsnext.devops.maven.mavenOperations
 
 def call(body) {
   def config = [:]
@@ -8,7 +8,7 @@ def call(body) {
   body()
 
   try {
-      def mvnTest = new test()
+      def mvnTest = new mavenOperations()
       mvnTest.setValue("${config.MAVEN_ROOT_POM}")
       mvnTest.unitTest()
   }

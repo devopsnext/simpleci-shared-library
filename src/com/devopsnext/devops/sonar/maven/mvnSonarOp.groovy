@@ -34,7 +34,7 @@ def sonar()
          {
              BRANCH = "${env.GIT_BRANCH}"
          }
-         if ( "$BRANCH" == "null" )
+         else
          {
              error "\u001B[31m[ERROR] failed to proceed with Sonar analysis, unable to get Git branch..."
          }
@@ -70,6 +70,10 @@ def sonar()
       }
    }
 }
+
+/********************************************
+***** Function to run the sonar preview 
+*********************************************/
 def sonarPreview()
 {
    try {
@@ -85,7 +89,7 @@ def sonarPreview()
          {
              BRANCH = "${env.GIT_BRANCH}"
          }
-         if ( "$BRANCH" == "null" )
+         else
          {
              error "\u001B[31m[ERROR] failed to proceed with Sonar analysis, unable to get Git branch..."
          }

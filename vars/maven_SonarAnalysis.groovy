@@ -1,5 +1,5 @@
 #!groovy
-import com.devopsnext.devops.sonar.maven.analysis
+import com.devopsnext.devops.sonar.maven.mvnSonarOp
 import com.devopsnext.devops.sonar.QualityGates
 
 def call(body) {
@@ -10,7 +10,7 @@ def call(body) {
 
   try {
     if ( "${env.GIT_BRANCH}" == "development" || "${env.GIT_BRANCH}" == "master" ) {
-	  def mvn_sonar = new analysis()
+	  def mvn_sonar = new mvnSonarOp()
       mvn_sonar.setValue("${config.MAVEN_ROOT_POM}", "${config.SONAR_TOKEN}")
       mvn_sonar.sonar()
 	  
@@ -20,7 +20,7 @@ def call(body) {
       qGates.checkQualityGates()
 	}
 	else {
-	  def mvn_sonarPreview = new analysis()
+	  def mvn_sonarPreview = new mvnSonarOp()
       mvn_sonarPreview.setValue("${config.MAVEN_ROOT_POM}", "${config.SONAR_TOKEN}")
       mvn_sonarPreview.sonarPreview()
 	  
